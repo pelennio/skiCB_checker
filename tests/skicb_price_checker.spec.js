@@ -63,7 +63,7 @@ test.describe("Price check: ", async () => {
     console.log("New values added to the list: *******\n", lastPriceData);
 
     /**
-     * @return {Number} returns pre last price
+     * @returns {Number} returns pre last price
      */
     const preLastTotalPrice = () => {
       for (let i = Object.keys(output).length - 2; i > 0; i--) {
@@ -74,6 +74,7 @@ test.describe("Price check: ", async () => {
           return preLastTotalPrice;
         }
       }
+      return 0;
     };
     // console.log(
     //   "lastTotalPrice",
