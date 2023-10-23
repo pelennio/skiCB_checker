@@ -1,0 +1,931 @@
+{
+  "BestUnitPriceAndAvailability": {
+    "PriceConversion": null,
+    "OriginalPrice": 336.25,
+    "Price": 285.8125,
+    "PropertyId": 50422325,
+    "LocationId": 50422320,
+    "PackageId": 50004906,
+    "NumberOfRoomsAvailable": 4,
+    "LocationCurrencyCode": "USD",
+    "Neighborhoods": [256],
+    "IsEmrDiscountAvailable": true,
+    "EmrPrice": 228.65,
+    "EmrSavings": 57.1625,
+    "OnlineSavings": 50.4375
+  },
+  "UnitsAndUniquePackages": {
+    "UniquePackages": [
+      {
+        "PackageId": 50004906,
+        "PackageSupplierId": 376073,
+        "Name": "Book Winter Early & Save: Non-Refundable",
+        "Description": "Start dreaming of your snowy retreat to the mountains and save at least 15% off winter lodging when you book 30 days in advance. See package for full details.*Minimum length of stay may apply, see full terms and conditions on http://www.snow.com/hospitality/cancellation-policy.",
+        "Price": 0.0,
+        "DateActive": "2023-12-01T07:00:00Z",
+        "DateInactive": "2024-04-30T06:00:00Z",
+        "MinStay": 0,
+        "MaxStay": 99,
+        "DisplayType": 1,
+        "BookFromDate": "2023-10-13T06:00:00Z",
+        "BookUntilDate": "2024-04-30T06:00:00Z",
+        "Components": [],
+        "PackageCode": null,
+        "RequiresCode": false,
+        "ComponentId": 0,
+        "RequiredComponentHasNoItems": false,
+        "HasRequiredComponents": false,
+        "BlackoutDates": []
+      },
+      {
+        "PackageId": 50004849,
+        "PackageSupplierId": 376073,
+        "Name": "Extended Snowcation",
+        "Description": "Reward yourself with an extended escape. Save 10% off lodging at Crested Butte when you stay four nights or more. Our cozy condos or mountainside accommodations can be your home away from home while exploring endless adventure on and off the mountain this winter. See full terms and conditions on www.snow.com/hospitality/cancellation-policy.",
+        "Price": 0.0,
+        "DateActive": "2023-12-01T07:00:00Z",
+        "DateInactive": "2024-04-30T06:00:00Z",
+        "MinStay": 0,
+        "MaxStay": 99,
+        "DisplayType": 1,
+        "BookFromDate": "2023-10-13T06:00:00Z",
+        "BookUntilDate": "2024-04-30T06:00:00Z",
+        "Components": [],
+        "PackageCode": null,
+        "RequiresCode": false,
+        "ComponentId": 0,
+        "RequiredComponentHasNoItems": false,
+        "HasRequiredComponents": false,
+        "BlackoutDates": []
+      }
+    ],
+    "Units": [
+      {
+        "Description": "The Emmons Studio is equipped with a king size bed and pull-down king size Murphy bed adjacent to the stationary bed. It is approximately 433 square feet. This studio has a kitchenette with microwave, one burner stove, dishwasher, sink, under-counter refrigerator, coffee pot, dishware, and utensils. Each room includes hairdryer, iron, ironing board, in-room safe, voicemail, wireless internet and satellite channels.",
+        "StartDate": "2023-12-18T00:00:00",
+        "EndDate": "2023-12-26T00:00:00",
+        "LocationCurrency": "USD",
+        "OriginalPrice": 336.25,
+        "Price": 285.8125,
+        "PropertyId": 50422325,
+        "LocationId": 50422320,
+        "ProductId": 34,
+        "PropertyName": "The Grand Lodge at Crested Butte - 2 King Emmons Studio",
+        "LocationName": "The Grand Lodge Crested Butte Hotel and Suites",
+        "Taxes": 91.78,
+        "NumberOfRoomsAvailable": 4,
+        "PackageOnly": false,
+        "DistanceToLift": null,
+        "Amenities": [
+          {
+            "Id": 4,
+            "Value": "All news channel"
+          },
+          {
+            "Id": 11,
+            "Value": "Bathroom amenities"
+          },
+          {
+            "Id": 15,
+            "Value": "Bathtub/shower combination"
+          },
+          {
+            "Id": 18,
+            "Value": "Cable television"
+          },
+          {
+            "Id": 19,
+            "Value": "Coffee/Tea maker"
+          },
+          {
+            "Id": 130,
+            "Value": "Complimenary local calls time limit"
+          },
+          {
+            "Id": 39,
+            "Value": "Fire alarm"
+          },
+          {
+            "Id": 42,
+            "Value": "Free toll free calls"
+          },
+          {
+            "Id": 50,
+            "Value": "Hairdryer"
+          },
+          {
+            "Id": 136,
+            "Value": "HBO available"
+          },
+          {
+            "Id": 55,
+            "Value": "Iron"
+          },
+          {
+            "Id": 56,
+            "Value": "Ironing board"
+          },
+          {
+            "Id": 58,
+            "Value": "King bed"
+          },
+          {
+            "Id": 61,
+            "Value": "Kitchenette"
+          },
+          {
+            "Id": 689,
+            "Value": "No Air conditioning"
+          },
+          {
+            "Id": 509,
+            "Value": "No Pets"
+          },
+          {
+            "Id": 75,
+            "Value": "Notepads"
+          },
+          {
+            "Id": 88,
+            "Value": "Refrigerator"
+          },
+          {
+            "Id": 92,
+            "Value": "Safe"
+          },
+          {
+            "Id": 99,
+            "Value": "Sitting area"
+          },
+          {
+            "Id": 100,
+            "Value": "Smoke detectors"
+          },
+          {
+            "Id": 105,
+            "Value": "Stove"
+          },
+          {
+            "Id": 146,
+            "Value": "Tables and chairs"
+          },
+          {
+            "Id": 107,
+            "Value": "Telephone"
+          },
+          {
+            "Id": 119,
+            "Value": "Wake-up calls"
+          },
+          {
+            "Id": 123,
+            "Value": "Wireless internet connection"
+          }
+        ],
+        "Neighborhoods": [
+          {
+            "Id": 256,
+            "Value": "Mt. Crested Butte"
+          }
+        ],
+        "Photos": [
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-592-f771a4ec.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 1
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-593-3f624613.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 2
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-591-2987f63b.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 3
+          }
+        ],
+        "Packages": [
+          {
+            "PackageId": 50004906,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 285.8125,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          },
+          {
+            "PackageId": 50004849,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 302.625,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          }
+        ],
+        "ProductPriceConversion": null,
+        "IsProductAvailable": true,
+        "IsEmrDiscountAvailable": true,
+        "EmrPrice": 228.65,
+        "EmrSavings": 57.1625,
+        "OnlineSavings": 50.4375,
+        "NumberOfAdults": 4,
+        "NumberOfChildren": 0,
+        "QuantityAvailable": 4
+      },
+      {
+        "Description": "The Standard King Suite has one king bed in the bedroom area and a double sleeper sofa in the living room area with two televisions and is approximately 442 square feet. This suite offers a kitchenette with microwave, one burner stove, dishwasher, sink, under-counter refrigerator, coffee pot, dishware, and utensils. Each room includes hairdryer, iron, ironing board, in-room safe, voicemail, wireless internet and satellite channels. \r\n \r\n For accessible rooms, please call for availability.",
+        "StartDate": "2023-12-18T00:00:00",
+        "EndDate": "2023-12-26T00:00:00",
+        "LocationCurrency": "USD",
+        "OriginalPrice": 346.25,
+        "Price": 294.3125,
+        "PropertyId": 50422325,
+        "LocationId": 50422320,
+        "ProductId": 122,
+        "PropertyName": "The Grand Lodge at Crested Butte - King Suite - Pet Friendly",
+        "LocationName": "The Grand Lodge Crested Butte Hotel and Suites",
+        "Taxes": 93.51,
+        "NumberOfRoomsAvailable": 2,
+        "PackageOnly": false,
+        "DistanceToLift": null,
+        "Amenities": [
+          {
+            "Id": 15,
+            "Value": "Bathtub/shower combination"
+          },
+          {
+            "Id": 18,
+            "Value": "Cable television"
+          },
+          {
+            "Id": 157,
+            "Value": "Ceiling fan"
+          },
+          {
+            "Id": 19,
+            "Value": "Coffee/Tea maker"
+          },
+          {
+            "Id": 31,
+            "Value": "Direct dial phone number"
+          },
+          {
+            "Id": 39,
+            "Value": "Fire alarm"
+          },
+          {
+            "Id": 42,
+            "Value": "Free toll free calls"
+          },
+          {
+            "Id": 50,
+            "Value": "Hairdryer"
+          },
+          {
+            "Id": 51,
+            "Value": "High speed internet connection"
+          },
+          {
+            "Id": 55,
+            "Value": "Iron"
+          },
+          {
+            "Id": 56,
+            "Value": "Ironing board"
+          },
+          {
+            "Id": 58,
+            "Value": "King bed"
+          },
+          {
+            "Id": 61,
+            "Value": "Kitchenette"
+          },
+          {
+            "Id": 689,
+            "Value": "No Air conditioning"
+          },
+          {
+            "Id": 85,
+            "Value": "Private bathroom"
+          },
+          {
+            "Id": 88,
+            "Value": "Refrigerator"
+          },
+          {
+            "Id": 92,
+            "Value": "Safe"
+          },
+          {
+            "Id": 94,
+            "Value": "Separate closet"
+          },
+          {
+            "Id": 99,
+            "Value": "Sitting area"
+          },
+          {
+            "Id": 100,
+            "Value": "Smoke detectors"
+          },
+          {
+            "Id": 102,
+            "Value": "Sofa bed"
+          },
+          {
+            "Id": 146,
+            "Value": "Tables and chairs"
+          },
+          {
+            "Id": 107,
+            "Value": "Telephone"
+          },
+          {
+            "Id": 119,
+            "Value": "Wake-up calls"
+          },
+          {
+            "Id": 123,
+            "Value": "Wireless internet connection"
+          }
+        ],
+        "Neighborhoods": [
+          {
+            "Id": 256,
+            "Value": "Mt. Crested Butte"
+          }
+        ],
+        "Photos": [
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-587-e1f9606f.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 1
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-584-b8ba7aa8.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 2
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-588-0c76674c.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 3
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-585-d6b332b3.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 4
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-590-d9205dc8.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 5
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-586-33e66006.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 6
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-589-59782d16.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 7
+          }
+        ],
+        "Packages": [
+          {
+            "PackageId": 50004906,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 294.3125,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          },
+          {
+            "PackageId": 50004849,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 311.625,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          }
+        ],
+        "ProductPriceConversion": null,
+        "IsProductAvailable": true,
+        "IsEmrDiscountAvailable": true,
+        "EmrPrice": 235.45,
+        "EmrSavings": 58.8625,
+        "OnlineSavings": 51.9375,
+        "NumberOfAdults": 4,
+        "NumberOfChildren": 0,
+        "QuantityAvailable": 2
+      },
+      {
+        "Description": "The Emmons Studio is equipped with a king size bed and pull-down king size Murphy bed adjacent to the stationary bed. It is approximately 433 square feet. This studio has a kitchenette with microwave, one burner stove, dishwasher, sink, under-counter refrigerator, coffee pot, dishware, and utensils. Each room includes hairdryer, iron, ironing board, in-room safe, voicemail, wireless internet and satellite channels.",
+        "StartDate": "2023-12-18T00:00:00",
+        "EndDate": "2023-12-26T00:00:00",
+        "LocationCurrency": "USD",
+        "OriginalPrice": 346.25,
+        "Price": 294.3125,
+        "PropertyId": 50422325,
+        "LocationId": 50422320,
+        "ProductId": 124,
+        "PropertyName": "The Grand Lodge at Crested Butte - 2 King Emmons Studio - Pet Friendly",
+        "LocationName": "The Grand Lodge Crested Butte Hotel and Suites",
+        "Taxes": 93.51,
+        "NumberOfRoomsAvailable": 1,
+        "PackageOnly": false,
+        "DistanceToLift": null,
+        "Amenities": [
+          {
+            "Id": 4,
+            "Value": "All news channel"
+          },
+          {
+            "Id": 11,
+            "Value": "Bathroom amenities"
+          },
+          {
+            "Id": 15,
+            "Value": "Bathtub/shower combination"
+          },
+          {
+            "Id": 18,
+            "Value": "Cable television"
+          },
+          {
+            "Id": 19,
+            "Value": "Coffee/Tea maker"
+          },
+          {
+            "Id": 130,
+            "Value": "Complimenary local calls time limit"
+          },
+          {
+            "Id": 39,
+            "Value": "Fire alarm"
+          },
+          {
+            "Id": 42,
+            "Value": "Free toll free calls"
+          },
+          {
+            "Id": 50,
+            "Value": "Hairdryer"
+          },
+          {
+            "Id": 136,
+            "Value": "HBO available"
+          },
+          {
+            "Id": 55,
+            "Value": "Iron"
+          },
+          {
+            "Id": 56,
+            "Value": "Ironing board"
+          },
+          {
+            "Id": 58,
+            "Value": "King bed"
+          },
+          {
+            "Id": 61,
+            "Value": "Kitchenette"
+          },
+          {
+            "Id": 689,
+            "Value": "No Air conditioning"
+          },
+          {
+            "Id": 75,
+            "Value": "Notepads"
+          },
+          {
+            "Id": 88,
+            "Value": "Refrigerator"
+          },
+          {
+            "Id": 92,
+            "Value": "Safe"
+          },
+          {
+            "Id": 99,
+            "Value": "Sitting area"
+          },
+          {
+            "Id": 100,
+            "Value": "Smoke detectors"
+          },
+          {
+            "Id": 105,
+            "Value": "Stove"
+          },
+          {
+            "Id": 146,
+            "Value": "Tables and chairs"
+          },
+          {
+            "Id": 107,
+            "Value": "Telephone"
+          },
+          {
+            "Id": 119,
+            "Value": "Wake-up calls"
+          },
+          {
+            "Id": 123,
+            "Value": "Wireless internet connection"
+          }
+        ],
+        "Neighborhoods": [
+          {
+            "Id": 256,
+            "Value": "Mt. Crested Butte"
+          }
+        ],
+        "Photos": [
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-592-f771a4ec.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 1
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-593-3f624613.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 2
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-591-2987f63b.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 3
+          }
+        ],
+        "Packages": [
+          {
+            "PackageId": 50004906,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 294.3125,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          },
+          {
+            "PackageId": 50004849,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 311.625,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          }
+        ],
+        "ProductPriceConversion": null,
+        "IsProductAvailable": true,
+        "IsEmrDiscountAvailable": true,
+        "EmrPrice": 235.45,
+        "EmrSavings": 58.8625,
+        "OnlineSavings": 51.9375,
+        "NumberOfAdults": 4,
+        "NumberOfChildren": 0,
+        "QuantityAvailable": 1
+      },
+      {
+        "Description": "The Corner King Suite has a king bed and a double sleeper sofa with two televisions. This suite's layout is similar to the Standard King Suite except it provides more space at approximately 480 square feet and includes additional windows. This suite has a kitchenette with microwave, one burner stove, dishwasher, sink, under-counter refrigerator, coffee pot, dishware, and utensils. Each room includes hairdryer, iron, ironing board, in-room safe, voicemail, wireless internet and satellite channels. \r\n \r\nBedding arrangements are for 4 people, and a 5th person may be added with the purchase of a rollaway bed for $25 plus tax per night.",
+        "StartDate": "2023-12-18T00:00:00",
+        "EndDate": "2023-12-26T00:00:00",
+        "LocationCurrency": "USD",
+        "OriginalPrice": 356.25,
+        "Price": 302.8125,
+        "PropertyId": 50422325,
+        "LocationId": 50422320,
+        "ProductId": 35,
+        "PropertyName": "The Grand Lodge at Crested Butte - Corner King Suite",
+        "LocationName": "The Grand Lodge Crested Butte Hotel and Suites",
+        "Taxes": 95.25,
+        "NumberOfRoomsAvailable": 1,
+        "PackageOnly": false,
+        "DistanceToLift": null,
+        "Amenities": [
+          {
+            "Id": 4,
+            "Value": "All news channel"
+          },
+          {
+            "Id": 11,
+            "Value": "Bathroom amenities"
+          },
+          {
+            "Id": 15,
+            "Value": "Bathtub/shower combination"
+          },
+          {
+            "Id": 18,
+            "Value": "Cable television"
+          },
+          {
+            "Id": 157,
+            "Value": "Ceiling fan"
+          },
+          {
+            "Id": 19,
+            "Value": "Coffee/Tea maker"
+          },
+          {
+            "Id": 130,
+            "Value": "Complimenary local calls time limit"
+          },
+          {
+            "Id": 31,
+            "Value": "Direct dial phone number"
+          },
+          {
+            "Id": 39,
+            "Value": "Fire alarm"
+          },
+          {
+            "Id": 42,
+            "Value": "Free toll free calls"
+          },
+          {
+            "Id": 50,
+            "Value": "Hairdryer"
+          },
+          {
+            "Id": 136,
+            "Value": "HBO available"
+          },
+          {
+            "Id": 51,
+            "Value": "High speed internet connection"
+          },
+          {
+            "Id": 55,
+            "Value": "Iron"
+          },
+          {
+            "Id": 56,
+            "Value": "Ironing board"
+          },
+          {
+            "Id": 58,
+            "Value": "King bed"
+          },
+          {
+            "Id": 61,
+            "Value": "Kitchenette"
+          },
+          {
+            "Id": 689,
+            "Value": "No Air conditioning"
+          },
+          {
+            "Id": 509,
+            "Value": "No Pets"
+          },
+          {
+            "Id": 75,
+            "Value": "Notepads"
+          },
+          {
+            "Id": 85,
+            "Value": "Private bathroom"
+          },
+          {
+            "Id": 92,
+            "Value": "Safe"
+          },
+          {
+            "Id": 94,
+            "Value": "Separate closet"
+          },
+          {
+            "Id": 100,
+            "Value": "Smoke detectors"
+          },
+          {
+            "Id": 102,
+            "Value": "Sofa bed"
+          },
+          {
+            "Id": 146,
+            "Value": "Tables and chairs"
+          },
+          {
+            "Id": 107,
+            "Value": "Telephone"
+          },
+          {
+            "Id": 119,
+            "Value": "Wake-up calls"
+          },
+          {
+            "Id": 123,
+            "Value": "Wireless internet connection"
+          }
+        ],
+        "Neighborhoods": [
+          {
+            "Id": 256,
+            "Value": "Mt. Crested Butte"
+          }
+        ],
+        "Photos": [
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-594-90399cd2.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 1
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-596-a1ddd9a9.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 2
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-598-aa44695d.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 3
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-595-55f281fd.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 4
+          },
+          {
+            "Url": "https://images.vrinntopia.com/photos//50422325/50422325-597-073ae402.jpg",
+            "Width": 840,
+            "Height": 460,
+            "AltText": null,
+            "DisplaySeq": 5
+          }
+        ],
+        "Packages": [
+          {
+            "PackageId": 50004906,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 302.8125,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          },
+          {
+            "PackageId": 50004849,
+            "PackageSupplierId": 0,
+            "Name": null,
+            "Description": null,
+            "Price": 320.625,
+            "DateActive": "0001-01-01T00:00:00",
+            "DateInactive": "0001-01-01T00:00:00",
+            "MinStay": 0,
+            "MaxStay": 0,
+            "DisplayType": 0,
+            "BookFromDate": "0001-01-01T00:00:00",
+            "BookUntilDate": "0001-01-01T00:00:00",
+            "Components": [],
+            "PackageCode": null,
+            "RequiresCode": false,
+            "ComponentId": 1,
+            "RequiredComponentHasNoItems": false,
+            "HasRequiredComponents": false,
+            "BlackoutDates": null
+          }
+        ],
+        "ProductPriceConversion": null,
+        "IsProductAvailable": true,
+        "IsEmrDiscountAvailable": true,
+        "EmrPrice": 242.25,
+        "EmrSavings": 60.5625,
+        "OnlineSavings": 53.4375,
+        "NumberOfAdults": 4,
+        "NumberOfChildren": 0,
+        "QuantityAvailable": 1
+      }
+    ]
+  }
+}
