@@ -35,8 +35,9 @@ test.describe("Price check: ", async () => {
   ) {
     let myList = new Promise((resolve) => {
       let myObj = [];
+
       csv
-        .parseFile("test-results/price.csv", { headers: true })
+        .parseFile("curent_prices/price.csv", { headers: true })
         .on("data", (data) => {
           myObj.push(data);
         })
@@ -99,7 +100,7 @@ test.describe("Price check: ", async () => {
     }
 
     ///WRITING
-    writeToPath("test-results/price.csv", output, { headers: true });
+    writeToPath("curent_prices/price.csv", output, { headers: true });
   }
 
   test("Price check: Book Winter Early & Save: Non-Refundable", async ({
@@ -131,7 +132,7 @@ test.describe("Price check: ", async () => {
     );
 
     writeTheResults("BWE", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `test-results/BWE:${myDate}.png` });
+    await page.screenshot({ path: `curent_prices/BWE:${myDate}.png` });
   });
 
   test("Extended Snowcation", async ({ page }) => {
@@ -162,7 +163,7 @@ test.describe("Price check: ", async () => {
     );
 
     writeTheResults("ES", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `test-results/ES:${myDate}.png` });
+    await page.screenshot({ path: `curent_prices/ES:${myDate}.png` });
   });
 
   test("Standard room option", async ({ page }) => {
@@ -193,6 +194,6 @@ test.describe("Price check: ", async () => {
     );
 
     writeTheResults("STANDARD", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `test-results/STANDARD:${myDate}.png` });
+    await page.screenshot({ path: `curent_prices/STANDARD:${myDate}.png` });
   });
 });
