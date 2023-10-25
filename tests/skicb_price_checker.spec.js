@@ -62,7 +62,6 @@ test.describe("Price check: ", async () => {
     const lastPriceData =
       output[Object.keys(output)[Object.keys(output).length - 1]];
     const lastTotalPrice = Number(lastPriceData.RewardsTotal.split("$")[1]);
-    console.log("New values added to the list: *******\n", lastPriceData);
 
     /**
      * @returns {Number} returns pre-last price
@@ -91,6 +90,7 @@ test.describe("Price check: ", async () => {
     }
     output[Object.keys(output)[Object.keys(output).length - 1]].ChangeVector =
       changeVector;
+    console.log("New values added to the list: *******\n", lastPriceData);
 
     ///WRITING results to the .csv file
     writeToPath("curent_prices/price.csv", output, { headers: true });
