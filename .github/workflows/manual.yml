@@ -25,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:  
+          token: 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
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -40,11 +42,11 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 3
-          token: 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
       - name: Commit report
         run: |
           git config --global user.name 'pelennio'
           git config --global user.email 'pelennio@gmail.com'
+          git status
           git commit -am "New price results"
           git status
           git push
