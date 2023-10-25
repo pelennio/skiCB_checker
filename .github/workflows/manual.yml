@@ -40,7 +40,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 3
-          token: "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"
+          token: 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
       - name: Commit report
         run: |
           git config --global user.name 'pelennio'
