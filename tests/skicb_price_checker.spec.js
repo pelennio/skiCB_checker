@@ -16,15 +16,15 @@ test.describe("Price check: ", async () => {
     "Saturday",
   ];
   const myDate = moment().format("MM-D-YYYY");
-  // const d = new Date();
-  let day = weekday[moment().weekday()];
+  const day = weekday[moment().weekday()];
 
   /**
-   * @param {string} promo the name of Promo, can be BWE or ES
-   * @param {string} subtotal
-   * @param {string} taxesFees
-   * @param {string} onlineTotal
-   * @param {string} [rewardsTotal]
+   * @param {string} promo the name of Promo, can be BWE, ES or Standard
+   * @param {string} subtotal full price per trip without discount
+   * @param {string} taxesFees taxes and fees
+   * @param {string} onlineTotal full price per trip with online discount
+   * @param {string} rewardsTotal full price per trip with REWORDS discount (-20%0
+   * @param {string} changeVector demonstrate price change vector comparing to last price
    */
   async function writeTheResults(
     promo,
@@ -35,7 +35,6 @@ test.describe("Price check: ", async () => {
   ) {
     let myList = new Promise((resolve) => {
       let myObj = [];
-
       csv
         .parseFile("curent_prices/price.csv", { headers: true })
         .on("data", (data) => {
@@ -48,6 +47,7 @@ test.describe("Price check: ", async () => {
     });
 
     let output = await myList;
+    let changeVector = "";
     await output.push({
       Date: `${myDate}`,
       DayOfWeek: `${day}`,
@@ -56,6 +56,7 @@ test.describe("Price check: ", async () => {
       "Taxes&Fees": `${taxesFees}`,
       OnlineTotal: `${onlineTotal}`,
       RewardsTotal: `${rewardsTotal}`,
+      ChangeVector: changeVector,
     });
 
     const lastPriceData =
@@ -64,7 +65,7 @@ test.describe("Price check: ", async () => {
     console.log("New values added to the list: *******\n", lastPriceData);
 
     /**
-     * @returns {Number} returns pre last price
+     * @returns {Number} returns pre-last price
      */
     const preLastTotalPrice = () => {
       for (let i = Object.keys(output).length - 2; i > 0; i--) {
@@ -77,39 +78,34 @@ test.describe("Price check: ", async () => {
       }
       return 0;
     };
-    // console.log(
-    //   "lastTotalPrice",
-    //   lastTotalPrice,
-    //   typeof lastTotalPrice,
-    //   " preLastTotalPrice",
-    //   preLastTotalPrice(),
-    //   typeof preLastTotalPrice()
-    // );
-    if (lastTotalPrice > preLastTotalPrice()) {
-      console.log(
-        `${promo}:*** 😤 The price is increasing by😤 ***`,
-        lastTotalPrice - preLastTotalPrice()
-      );
-    } else if (lastTotalPrice == preLastTotalPrice()) {
+    const diff = Math.round(lastTotalPrice - preLastTotalPrice());
+    if (diff > 0) {
+      console.log(`${promo}:*** 😤 The price is increasing by😤 ***`, diff);
+      changeVector = `⬆︎ (${diff})`;
+    } else if (diff == 0) {
       console.log(`${promo}:*** 💅🏻 The price is stable 💅🏻 ***`);
+      changeVector = "🟰";
     } else {
-      console.log(
-        `${promo}:*** 👀 The price is dropping by: 👀 ***`,
-        preLastTotalPrice() - lastTotalPrice
-      );
+      console.log(`${promo}:*** 👀 The price is dropping by: 👀 ***`, -diff);
+      changeVector = `⬇︎ (${diff})`;
     }
+    output[Object.keys(output)[Object.keys(output).length - 1]].ChangeVector =
+      changeVector;
 
-    ///WRITING
+    ///WRITING results to the .csv file
     writeToPath("curent_prices/price.csv", output, { headers: true });
   }
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320"
+    );
+  });
 
   test("Price check: Book Winter Early & Save: Non-Refundable", async ({
     page,
   }) => {
     const component = new Components(page);
-    await page.goto(
-      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320"
-    );
     await component.skibd.checkInDate.fill("12/19/2023");
     await component.skibd.checkOutDate.click();
     await component.skibd.checkOutDate.fill("12/26/2023");
@@ -117,7 +113,6 @@ test.describe("Price check: ", async () => {
     await component.skibd.searchButton.click();
     await component.skibd.bweOption.click();
     await component.skibd.addToCartButton.click();
-    await page.waitForURL("**/cart.aspx");
     const subtotal = await component.skibd.priceWithRemovedComa(
       component.skibd.subtotal
     );
@@ -131,16 +126,21 @@ test.describe("Price check: ", async () => {
       component.skibd.rewardsTotal
     );
 
-    writeTheResults("BWE", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `curent_prices/BWE:${myDate}.png` });
+    const pricePromo = "BWE";
+    writeTheResults(
+      `${pricePromo}`,
+      subtotal,
+      taxesFees,
+      onlineTotal,
+      rewardsTotal
+    );
+    await page.screenshot({
+      path: `curent_prices/${pricePromo}:${myDate}.png`,
+    });
   });
 
   test("Extended Snowcation", async ({ page }) => {
     const component = new Components(page);
-    //filling the form
-    await page.goto(
-      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320"
-    );
     await component.skibd.checkInDate.fill("12/19/2023");
     await component.skibd.checkOutDate.click();
     await component.skibd.checkOutDate.fill("12/26/2023");
@@ -148,7 +148,6 @@ test.describe("Price check: ", async () => {
     await component.skibd.searchButton.click();
     await component.skibd.esOption.click();
     await component.skibd.addToCartButton.click();
-    await page.waitForURL("**/cart.aspx");
     const subtotal = await component.skibd.priceWithRemovedComa(
       component.skibd.subtotal
     );
@@ -161,17 +160,21 @@ test.describe("Price check: ", async () => {
     const rewardsTotal = await component.skibd.priceWithRemovedComa(
       component.skibd.rewardsTotal
     );
-
-    writeTheResults("ES", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `curent_prices/ES:${myDate}.png` });
+    const pricePromo = "ES";
+    writeTheResults(
+      `${pricePromo}`,
+      subtotal,
+      taxesFees,
+      onlineTotal,
+      rewardsTotal
+    );
+    await page.screenshot({
+      path: `curent_prices/${pricePromo}:${myDate}.png`,
+    });
   });
 
   test("Standard room option", async ({ page }) => {
     const component = new Components(page);
-    //filling the form
-    await page.goto(
-      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320"
-    );
     await component.skibd.checkInDate.fill("12/19/2023");
     await component.skibd.checkOutDate.click();
     await component.skibd.checkOutDate.fill("12/26/2023");
@@ -179,7 +182,6 @@ test.describe("Price check: ", async () => {
     await component.skibd.searchButton.click();
     await component.skibd.standardOption.click();
     await component.skibd.addToCartButton.click();
-    await page.waitForURL("**/cart.aspx");
     const subtotal = await component.skibd.priceWithRemovedComa(
       component.skibd.subtotal
     );
@@ -192,8 +194,16 @@ test.describe("Price check: ", async () => {
     const rewardsTotal = await component.skibd.priceWithRemovedComa(
       component.skibd.rewardsTotal
     );
-
-    writeTheResults("STANDARD", subtotal, taxesFees, onlineTotal, rewardsTotal);
-    await page.screenshot({ path: `curent_prices/STANDARD:${myDate}.png` });
+    const pricePromo = "STANDARD";
+    writeTheResults(
+      `${pricePromo}`,
+      subtotal,
+      taxesFees,
+      onlineTotal,
+      rewardsTotal
+    );
+    await page.screenshot({
+      path: `curent_prices/${pricePromo}:${myDate}.png`,
+    });
   });
 });
