@@ -25,8 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:  
-          token: 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
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -47,6 +45,7 @@ jobs:
           git config --global user.name "pelennio"
           git config --global user.email "pelennio@gmail.com"
           git status
+          git remote set-url origin https://x-access-token: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@github.com/pelennio/skiCB_checker
           git commit -am New price results
           git status
           git push
