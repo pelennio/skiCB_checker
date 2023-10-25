@@ -10,9 +10,9 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Manual run for Playwright tests'
+        description: "Manual run for Playwright tests"
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: "Run test manualy"
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -40,3 +40,9 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Commit report
+        run: |
+          git config --global user.name 'pelennio'
+          git config --global user.email 'pelennio@gmail.com'
+          git commit -am "New price results"
+          git push
