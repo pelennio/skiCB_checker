@@ -50,5 +50,5 @@ jobs:
           git status
           git log
           git remote set-url --push origin https://pelennio:$GITHUB_TOKEN@github.com/skiCB_checker
-
+          git push
          
