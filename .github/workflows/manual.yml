@@ -1,4 +1,4 @@
-# This is a basic workflow that is manually triggered
+n# This is a basic workflow that is manually triggered
 name: Manual workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
@@ -49,6 +49,6 @@ jobs:
           git commit -a -m "New price results"
           git status
           git log
-          git remote set-url --push origin https://pelennio:$GITHUB_TOKEN@github.com/skiCB_checker
+          git remote set-url --push origin https://pelennio:$GITHUB_TOKEN@github.com/pelennio/skiCB_checker
           git push
          
