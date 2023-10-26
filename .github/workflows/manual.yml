@@ -46,9 +46,6 @@ jobs:
           git config --global user.name "pelennio"
           git config --global user.email "pelennio@gmail.com"
           git status
-          git commit -a -m "New price results"
-          git status
-          git log
-          git remote set-url --push origin https://pelennio:$GITHUB_TOKEN@github.com/pelennio/skiCB_checker
+          git commit -am "New price results"
           git push
          
