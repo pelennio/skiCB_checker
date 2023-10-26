@@ -40,6 +40,7 @@ jobs:
         run: |
           git config --global user.name "pelennio"
           git config --global user.email "pelennio@gmail.com"
+          git add .
           git status
           git commit -a -m "New price results"
           git status
