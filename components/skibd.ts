@@ -16,6 +16,15 @@ export class Skibd {
   get peopleCount() {
     return this.page.locator("#lodging_details_filter__adult_countInput");
   }
+  get childCount() {
+    return this.page.locator("#lodging_details_filter__child_countInput");
+  }
+  get child_0_Age() {
+    return this.page.locator("#lodging_details_filter__child_age_0Input");
+  }
+  get child_1_Age() {
+    return this.page.locator("#lodging_details_filter__child_age_1Input");
+  }
 
   get searchButton() {
     return this.page.getByRole("button", { name: "Search" });

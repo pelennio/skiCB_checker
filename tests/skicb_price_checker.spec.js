@@ -101,4 +101,37 @@ test.describe("Price check: ", async () => {
       path: `curent_prices/${pricePromo}:${myDate}.png`,
     });
   });
+
+  test("BweOption room option with 2 kids", async ({ page }) => {
+    const component = new Components(page);
+    await component.skibd.checkInDate.fill(checkInDate);
+    await component.skibd.checkOutDate.click();
+    await component.skibd.checkOutDate.fill(checkOutDate);
+    await component.skibd.peopleCount.fill("2");
+    await component.skibd.childCount.fill("2");
+    await component.skibd.peopleCount.click();
+    await component.skibd.child_0_Age.fill("12");
+    await component.skibd.child_1_Age.fill("8");
+
+    await component.skibd.searchButton.click();
+    await component.skibd.bweOption.click();
+    await component.skibd.addToCartButton.click();
+    const subtotal = await component.skibd.priceWithRemovedComa(
+      component.skibd.subtotal
+    );
+    const taxesFees = await component.skibd.priceWithRemovedComa(
+      component.skibd.taxesFees
+    );
+    const onlineTotal = (
+      await component.skibd.priceWithRemovedComa(component.skibd.onlineTotal)
+    ).split("\n")[0];
+    const rewardsTotal = await component.skibd.priceWithRemovedComa(
+      component.skibd.rewardsTotal
+    );
+    const pricePromo = "BWE_kids";
+    publish(`${pricePromo}`, subtotal, taxesFees, onlineTotal, rewardsTotal);
+    await page.screenshot({
+      path: `curent_prices/${pricePromo}:${myDate}.png`,
+    });
+  });
 });
