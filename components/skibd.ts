@@ -36,6 +36,12 @@ export class Skibd {
     });
   }
 
+  get cyberSale() {
+    return this.page.getByRole("heading", {
+      name: "Pass Holder Exclusive Cyber Sale",
+    });
+  }
+
   get esOption() {
     return this.page.getByRole("heading", {
       name: "Extended Snowcation",
