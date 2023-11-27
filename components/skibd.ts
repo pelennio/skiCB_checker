@@ -29,6 +29,14 @@ export class Skibd {
   get searchButton() {
     return this.page.getByRole("button", { name: "Search" });
   }
+  get dealsList() {
+    return this.page.locator(".lodging_details_deals__deals_list ");
+  }
+  get dealsText() {
+    return this.page.locator(
+      ".lodging_details_deals__deals_list .lodging_details_deals__deals_item__label_text"
+    );
+  }
 
   get bweOption() {
     return this.page.getByRole("heading", {
