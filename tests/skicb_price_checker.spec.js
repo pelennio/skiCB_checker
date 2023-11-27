@@ -28,7 +28,6 @@ test.describe("Price check: ", async () => {
     await component.skibd.searchButton.click();
     const pricePromo = await component.skibd.dealsText.nth(0).innerText();
     await component.skibd.dealsText.nth(0).click();
-    console.log(pricePromo + " typeOf ");
     await component.skibd.addToCartButton.click();
     const subtotal = await component.skibd.priceWithRemovedComa(
       component.skibd.subtotal
@@ -61,7 +60,6 @@ test.describe("Price check: ", async () => {
     await component.skibd.searchButton.click();
     const pricePromo = await component.skibd.dealsText.nth(1).innerText();
     await component.skibd.dealsText.nth(1).click();
-    console.log(pricePromo + " typeOf ");
     await component.skibd.addToCartButton.click();
     const subtotal = await component.skibd.priceWithRemovedComa(
       component.skibd.subtotal
@@ -93,9 +91,10 @@ test.describe("Price check: ", async () => {
     await component.skibd.child_1_Age.fill("8");
     await component.skibd.searchButton.click();
     try {
-      const pricePromo = await component.skibd.dealsText.nth(2).innerText();
+      const pricePromo = await component.skibd.dealsText
+        .nth(2)
+        .innerText({ timeout: 1000 });
       await component.skibd.dealsText.nth(2).click();
-      console.log(pricePromo + " typeOf ");
       await component.skibd.addToCartButton.click();
       const subtotal = await component.skibd.priceWithRemovedComa(
         component.skibd.subtotal
@@ -114,8 +113,8 @@ test.describe("Price check: ", async () => {
         path: `curent_prices/${pricePromo}:${myDate}.png`,
       });
     } catch (error) {
-      console.log("not timeout error---->>>>");
-      console.log(error);
+      console.log("There is no third option to test out");
+      console.log("Type of error: " + error);
       test.skip();
     }
   });
