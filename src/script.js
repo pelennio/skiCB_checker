@@ -2,7 +2,7 @@
  * Parse the data and create a graph with the data.
  */
 function parseData(createGraph) {
-  Papa.parse("/curent_prices/price.csv", {
+  Papa.parse("../curent_prices/price.csv", {
     download: true,
     complete: function (results) {
       console.log(results.data);
@@ -13,39 +13,40 @@ function parseData(createGraph) {
 
 function createGraph(data) {
   var date = [];
-  var price = ["Price"];
-  let lastTotalPrice;
-  let lastTotalPrice2;
-  let dealPrice = ["DealPrice"];
+  var price = ["Standard Price"];
 
   for (var i = 1; i < data.length; i++) {
     if (data[i][2] == "STANDARD ROOM RATE") {
       date.push(data[i][0]);
-      lastTotalPrice = Number(data[i][3].split("$")[1]);
-      price.push(lastTotalPrice);
-    } else if (data[i][2] == "BWE") {
-      date.push(data[i][0]);
-      lastTotalPrice2 = Number(data[i][3].split("$")[1]);
-      dealPrice.push(lastTotalPrice2);
+      price.push(Number(data[i][6].split("$")[1]));
     }
   }
 
-  console.log(date);
-  console.log(price);
-
   var chart = c3.generate({
     bindto: "#chart",
+    title: {
+      text: "Standard price",
+    },
     data: {
-      columns: [price, dealPrice],
+      columns: [date, price],
     },
     axis: {
+      y: {
+        label: {
+          // ADD
+          text: "Price, $",
+          position: "outer-middle",
+        },
+      },
       x: {
         type: "category",
         categories: date,
+        groups: price,
+
         tick: {
           multiline: false,
           culling: {
-            max: 15,
+            max: 20,
           },
         },
       },
@@ -54,9 +55,61 @@ function createGraph(data) {
       enabled: true,
     },
     legend: {
-      position: "right",
+      position: "bottom",
+    },
+  });
+}
+
+///
+
+function createGraph1(data) {
+  var date = [];
+  let dealPrice = ["Deal Price"];
+
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][2] == "BWE") {
+      date.push(data[i][0]);
+      dealPrice.push(Number(data[i][6].split("$")[1]));
+    }
+  }
+
+  var chart2 = c3.generate({
+    bindto: "#chart2",
+    title: {
+      text: "Book early deal",
+    },
+    data: {
+      columns: [date, dealPrice],
+    },
+    axis: {
+      y: {
+        label: {
+          // ADD
+          text: "Price, $",
+          position: "outer-middle",
+        },
+      },
+      x: {
+        type: "category",
+        categories: date,
+        groups: dealPrice,
+
+        tick: {
+          multiline: false,
+          culling: {
+            max: 20,
+          },
+        },
+      },
+    },
+    zoom: {
+      enabled: true,
+    },
+    legend: {
+      position: "bottom",
     },
   });
 }
 
 parseData(createGraph);
+parseData(createGraph1);
