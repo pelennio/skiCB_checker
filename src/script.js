@@ -1,34 +1,53 @@
+parseData(createGraph, "Standard Price", "STANDARD ROOM RATE", "#chart");
+parseData(createGraph, "Book early deal", "BWE", "#chart2");
+parseData(
+  createGraph,
+  "PASS HOLDER EXCLUSIVE CYBER SALE",
+  "PASS HOLDER EXCLUSIVE CYBER SALE",
+  "#chart3"
+);
+parseData(createGraph, "EXTENDED SNOWCATION", "EXTENDED SNOWCATION", "#chart4");
+lastPrace(createGraphSmall, "#chart5");
+
 /*
  * Parse the data and create a graph with the data.
  */
-function parseData(createGraph) {
+function parseData(createGraph, priceType, dealType, placer) {
   Papa.parse("../curent_prices/price.csv", {
     download: true,
     complete: function (results) {
-      console.log(results.data);
-      createGraph(results.data);
+      createGraph(results.data, priceType, dealType, placer);
     },
   });
 }
 
-function createGraph(data) {
-  var date = [];
-  var price = ["Standard Price"];
+function lastPrace(createGraphSmall, placer) {
+  Papa.parse("../curent_prices/price.csv", {
+    download: true,
+    complete: function (results) {
+      createGraphSmall(results.data, placer);
+    },
+  });
+}
+
+function createGraph(data, priceType, dealType, placer) {
+  let date = [];
+  let price = [priceType];
 
   for (var i = 1; i < data.length; i++) {
-    if (data[i][2] == "STANDARD ROOM RATE") {
+    if (data[i][2] == dealType) {
       date.push(data[i][0]);
       price.push(Number(data[i][6].split("$")[1]));
     }
   }
 
   var chart = c3.generate({
-    bindto: "#chart",
+    bindto: placer,
     title: {
-      text: "Standard price",
+      text: priceType,
     },
     data: {
-      columns: [date, price],
+      columns: [price],
     },
     axis: {
       y: {
@@ -62,37 +81,40 @@ function createGraph(data) {
 
 ///
 
-function createGraph1(data) {
-  var date = [];
-  let dealPrice = ["Deal Price"];
+function createGraphSmall(data, placer) {
+  let dealName = [];
+  let dealPrice = ["Last Price"];
+  const lastDate = data[data.length - 1][0];
+  console.log("lastDate: " + lastDate);
 
-  for (var i = 1; i < data.length; i++) {
-    if (data[i][2] == "BWE") {
-      date.push(data[i][0]);
+  for (var i = data.length - 1; i > 0; i--) {
+    if (data[i][0] == lastDate) {
+      dealName.push(data[i][2]);
       dealPrice.push(Number(data[i][6].split("$")[1]));
+    } else {
+      break;
     }
   }
 
   var chart2 = c3.generate({
-    bindto: "#chart2",
+    bindto: placer,
     title: {
-      text: "Book early deal",
+      text: `Last prices for: ${lastDate}`,
     },
     data: {
-      columns: [date, dealPrice],
+      columns: [dealPrice],
+      type: "bar",
     },
     axis: {
       y: {
         label: {
-          // ADD
           text: "Price, $",
           position: "outer-middle",
         },
       },
       x: {
         type: "category",
-        categories: date,
-        groups: dealPrice,
+        categories: dealName,
 
         tick: {
           multiline: false,
@@ -102,14 +124,8 @@ function createGraph1(data) {
         },
       },
     },
-    zoom: {
-      enabled: true,
-    },
     legend: {
       position: "bottom",
     },
   });
 }
-
-parseData(createGraph);
-parseData(createGraph1);
