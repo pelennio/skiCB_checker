@@ -1,5 +1,5 @@
 // @ts-check
-const { test, errors } = require("@playwright/test");
+const { test } = require("@playwright/test");
 const moment = require("moment");
 import { Components } from "../components";
 import { publish } from "../src/publisher";

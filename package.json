@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
+  "type": "module",
   "keywords": [],
-  "author": "",
+  "author": "Olena",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.39.0",
