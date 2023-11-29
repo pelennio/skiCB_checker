@@ -3,6 +3,7 @@ const csv = require("@fast-csv/parse");
 const moment = require("moment");
 const { writeToPath } = require("fast-csv");
 /**
+ * @param {string} filePath the path to the CSV file
  * @param {string} promo the name of Promo, can be BWE, ES or Standard
  * @param {string} subtotal full price per trip without discount
  * @param {string} taxesFees taxes and fees
@@ -10,6 +11,7 @@ const { writeToPath } = require("fast-csv");
  * @param {string} rewardsTotal full price per trip with REWORDS discount (-20%)
  */
 export async function publish(
+  filePath,
   promo,
   subtotal,
   taxesFees,
@@ -32,7 +34,7 @@ export async function publish(
     let myList = new Promise((resolve) => {
       let myObj = [];
       csv
-        .parseFile("curent_prices/price.csv", { headers: true })
+        .parseFile(filePath, { headers: true })
         .on("data", (data) => {
           myObj.push(data);
         })
@@ -89,7 +91,7 @@ export async function publish(
     console.log("New values added to the list: *******\n", lastPriceData);
 
     ///WRITING results to the .csv file
-    writeToPath("curent_prices/price.csv", output, { headers: true });
+    writeToPath(filePath, output, { headers: true });
   }
   await writeTheResults();
   return;

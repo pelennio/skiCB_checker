@@ -41,9 +41,16 @@ test.describe("Price check: ", async () => {
     const rewardsTotal = await component.skibd.priceWithRemovedComa(
       component.skibd.rewardsTotal
     );
-    publish(`${pricePromo}`, subtotal, taxesFees, onlineTotal, rewardsTotal);
+    publish(
+      "curent_prices/price.csv",
+      pricePromo,
+      subtotal,
+      taxesFees,
+      onlineTotal,
+      rewardsTotal
+    );
     await page.screenshot({
-      path: `curent_prices/${pricePromo}:${myDate}.png`,
+      path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
     });
   });
 
@@ -73,9 +80,16 @@ test.describe("Price check: ", async () => {
     const rewardsTotal = await component.skibd.priceWithRemovedComa(
       component.skibd.rewardsTotal
     );
-    publish(`${pricePromo}`, subtotal, taxesFees, onlineTotal, rewardsTotal);
+    publish(
+      "curent_prices/price.csv",
+      pricePromo,
+      subtotal,
+      taxesFees,
+      onlineTotal,
+      rewardsTotal
+    );
     await page.screenshot({
-      path: `curent_prices/${pricePromo}:${myDate}.png`,
+      path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
     });
   });
 
@@ -108,9 +122,16 @@ test.describe("Price check: ", async () => {
       const rewardsTotal = await component.skibd.priceWithRemovedComa(
         component.skibd.rewardsTotal
       );
-      publish(`${pricePromo}`, subtotal, taxesFees, onlineTotal, rewardsTotal);
+      publish(
+        "curent_prices/price.csv",
+        pricePromo,
+        subtotal,
+        taxesFees,
+        onlineTotal,
+        rewardsTotal
+      );
       await page.screenshot({
-        path: `curent_prices/${pricePromo}:${myDate}.png`,
+        path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
       });
     } catch (error) {
       console.log("There is no third option to test out");
