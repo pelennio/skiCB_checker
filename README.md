@@ -1,4 +1,6 @@
-# WEB page: https://pelennio.github.io/skiCB_checker/src/
+# WEB page: [Lodge page](https://pelennio.github.io/skiCB_checker/src/)
+
+[Hilton page](https://pelennio.github.io/skiCB_checker/src/hilton-price.html)
 
 ## graphs-from-csv
 
