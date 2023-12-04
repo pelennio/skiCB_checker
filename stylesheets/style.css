@@ -2,3 +2,22 @@
   display: block;
   background-color: rgba(238, 238, 173, 0.905);
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0;
+  padding-left: 1rem;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.relative {
+  position: relative;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
