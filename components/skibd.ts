@@ -32,11 +32,6 @@ export class Skibd {
   get dealsList() {
     return this.page.locator(".lodging_details_deals__deals_list ");
   }
-  get dealsText() {
-    return this.page.locator(
-      ".lodging_details_deals__deals_list .lodging_details_deals__deals_item__label_text"
-    );
-  }
 
   get bweOption() {
     return this.page.getByRole("heading", {
@@ -87,6 +82,14 @@ export class Skibd {
 
   priceDetail(element: Locator) {
     return element.innerText();
+  }
+
+  dealsText(num: number) {
+    return this.page
+      .locator(
+        ".lodging_details_deals__deals_list .lodging_details_deals__deals_item__label_text"
+      )
+      .nth(num);
   }
 
   async priceWithRemovedComa(e: Locator) {

@@ -11,6 +11,13 @@ graph.parseData(
 graph.parseData(
   csvPath,
   graph.createGraph,
+  "EARLY SKI",
+  "EARLY SKI SEASON OFFER",
+  "#chart6"
+);
+graph.parseData(
+  csvPath,
+  graph.createGraph,
   "Book early deal",
   "BWE",
   "#chart2"

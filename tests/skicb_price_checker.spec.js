@@ -15,7 +15,10 @@ test.describe("Price check: ", async () => {
     );
   });
 
-  test("1-st room option", async ({ page }) => {
+  /**
+   * @param {number} option
+   */
+  async function testPrice(option, { page }) {
     const component = new Components(page);
     await component.skibd.checkInDate.fill(checkInDate);
     await component.skibd.checkOutDate.click();
@@ -26,89 +29,11 @@ test.describe("Price check: ", async () => {
     await component.skibd.child_0_Age.fill("12");
     await component.skibd.child_1_Age.fill("8");
     await component.skibd.searchButton.click();
-    const pricePromo = await component.skibd.dealsText.nth(0).innerText();
-    await component.skibd.dealsText.nth(0).click();
-    await component.skibd.addToCartButton.click();
-    const subtotal = await component.skibd.priceWithRemovedComa(
-      component.skibd.subtotal
-    );
-    const taxesFees = await component.skibd.priceWithRemovedComa(
-      component.skibd.taxesFees
-    );
-    const onlineTotal = (
-      await component.skibd.priceWithRemovedComa(component.skibd.onlineTotal)
-    ).split("\n")[0];
-    const rewardsTotal = await component.skibd.priceWithRemovedComa(
-      component.skibd.rewardsTotal
-    );
-    publish(
-      "curent_prices/skicb-price.csv",
-      pricePromo,
-      subtotal,
-      taxesFees,
-      onlineTotal,
-      rewardsTotal
-    );
-    await page.screenshot({
-      path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
-    });
-  });
+    const el = component.skibd.dealsText(option);
 
-  test("2-st room option", async ({ page }) => {
-    const component = new Components(page);
-    await component.skibd.checkInDate.fill(checkInDate);
-    await component.skibd.checkOutDate.click();
-    await component.skibd.checkOutDate.fill(checkOutDate);
-    await component.skibd.peopleCount.fill("2");
-    await component.skibd.childCount.fill("2");
-    await component.skibd.peopleCount.click();
-    await component.skibd.child_0_Age.fill("12");
-    await component.skibd.child_1_Age.fill("8");
-    await component.skibd.searchButton.click();
-    const pricePromo = await component.skibd.dealsText.nth(1).innerText();
-    await component.skibd.dealsText.nth(1).click();
-    await component.skibd.addToCartButton.click();
-    const subtotal = await component.skibd.priceWithRemovedComa(
-      component.skibd.subtotal
-    );
-    const taxesFees = await component.skibd.priceWithRemovedComa(
-      component.skibd.taxesFees
-    );
-    const onlineTotal = (
-      await component.skibd.priceWithRemovedComa(component.skibd.onlineTotal)
-    ).split("\n")[0];
-    const rewardsTotal = await component.skibd.priceWithRemovedComa(
-      component.skibd.rewardsTotal
-    );
-    publish(
-      "curent_prices/skicb-price.csv",
-      pricePromo,
-      subtotal,
-      taxesFees,
-      onlineTotal,
-      rewardsTotal
-    );
-    await page.screenshot({
-      path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
-    });
-  });
-
-  test("3-st room option", async ({ page }) => {
-    const component = new Components(page);
-    await component.skibd.checkInDate.fill(checkInDate);
-    await component.skibd.checkOutDate.click();
-    await component.skibd.checkOutDate.fill(checkOutDate);
-    await component.skibd.peopleCount.fill("2");
-    await component.skibd.childCount.fill("2");
-    await component.skibd.peopleCount.click();
-    await component.skibd.child_0_Age.fill("12");
-    await component.skibd.child_1_Age.fill("8");
-    await component.skibd.searchButton.click();
     try {
-      const pricePromo = await component.skibd.dealsText
-        .nth(2)
-        .innerText({ timeout: 1000 });
-      await component.skibd.dealsText.nth(2).click();
+      const pricePromo = await el.innerText({ timeout: 1000 });
+      await el.click();
       await component.skibd.addToCartButton.click();
       const subtotal = await component.skibd.priceWithRemovedComa(
         component.skibd.subtotal
@@ -138,5 +63,16 @@ test.describe("Price check: ", async () => {
       console.log("Type of error: " + error);
       test.skip();
     }
+  }
+  test("1-st room option", async ({ page }) => {
+    await testPrice(0, { page });
+  });
+
+  test("2-st room option", async ({ page }) => {
+    await testPrice(1, { page });
+  });
+
+  test("3-st room option", async ({ page }) => {
+    await testPrice(2, { page });
   });
 });
