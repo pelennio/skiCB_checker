@@ -1,5 +1,5 @@
 import * as graph from "./graphBuilder.js";
-const csvPath = "../curent_prices/price.csv";
+const csvPath = "../curent_prices/skicb-price.csv";
 
 graph.parseData(
   csvPath,

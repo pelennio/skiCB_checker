@@ -1,24 +1,25 @@
+import * as graph from "./graphBuilder.js";
 const any = "2 Queen Room Fridge and Microwave";
-parseData(createGraph, "Honor Price", any, "#chart");
-lastPrace(createGraphSmall, "#chart5");
+const csvPath = "../curent_prices/hampton-price.csv";
+
+graph.parseData(csvPath, graph.createGraph, "Honor Price", any, "#chart");
+graph.lastPrace(csvPath, graph.createGraphSmall, "#chart5");
 
 /*
  * Parse the data and create a graph with the data.
  */
-function parseData(createGraph, priceType, dealType, placer) {
-  Papa.parse("../curent_prices/hampton-price.csv", {
+/**
+ * @param {string} csvPath the path to the CSV file
+ * @param {function} createGraph the function for graph creating
+ * @param {string} priceType the deal we tracking or a room type to be shown as a legend
+ * @param {string} dealType the deal we tracking or a room type
+ * @param {string} placer web element the graph to be placed in
+ */
+function parseData(csvPath, createGraph, priceType, dealType, placer) {
+  Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
       createGraph(results.data, priceType, dealType, placer);
-    },
-  });
-}
-
-function lastPrace(createGraphSmall, placer) {
-  Papa.parse("../curent_prices/hampton-price.csv", {
-    download: true,
-    complete: function (results) {
-      createGraphSmall(results.data, placer);
     },
   });
 }
@@ -65,57 +66,6 @@ function createGraph(data, priceType, dealType, placer) {
     },
     zoom: {
       enabled: true,
-    },
-    legend: {
-      position: "bottom",
-    },
-  });
-}
-
-///
-
-function createGraphSmall(data, placer) {
-  let dealName = [];
-  let dealPrice = ["Last Price"];
-  const lastDate = data[data.length - 1][0];
-  console.log("lastDate: " + lastDate);
-
-  for (var i = data.length - 1; i > 0; i--) {
-    if (data[i][0] == lastDate) {
-      dealName.push(data[i][2]);
-      dealPrice.push(Number(data[i][6].split("$")[1]));
-    } else {
-      break;
-    }
-  }
-
-  var chart2 = c3.generate({
-    bindto: placer,
-    title: {
-      text: `Last prices for: ${lastDate}`,
-    },
-    data: {
-      columns: [dealPrice],
-      type: "bar",
-    },
-    axis: {
-      y: {
-        label: {
-          text: "Price, $",
-          position: "outer-middle",
-        },
-      },
-      x: {
-        type: "category",
-        categories: dealName,
-
-        tick: {
-          multiline: false,
-          culling: {
-            max: 20,
-          },
-        },
-      },
     },
     legend: {
       position: "bottom",

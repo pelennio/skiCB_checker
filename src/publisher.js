@@ -1,4 +1,3 @@
-// @ts-check
 const csv = require("@fast-csv/parse");
 const moment = require("moment");
 const { writeToPath } = require("fast-csv");

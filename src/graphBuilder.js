@@ -1,6 +1,13 @@
 /*
  * Parse the data and create a graph with the data.
  */
+/**
+ * @param {string} csvPath the path to the CSV file
+ * @param {function} createGraph the function for graph creating
+ * @param {string} priceType the deal we tracking or a room type to be shown as a legend
+ * @param {string} dealType the deal we tracking or a room type
+ * @param {string} placer web element the graph to be placed in
+ */
 export function parseData(csvPath, createGraph, priceType, dealType, placer) {
   Papa.parse(csvPath, {
     download: true,
@@ -10,6 +17,11 @@ export function parseData(csvPath, createGraph, priceType, dealType, placer) {
   });
 }
 
+/**
+ * @param {string} csvPath the path to the CSV file
+ * @param {function} createGraphSmall the function for graph creating with only latest data
+ * @param {string} placer web element the graph to be placed in
+ */
 export function lastPrace(csvPath, createGraphSmall, placer) {
   Papa.parse(csvPath, {
     download: true,
