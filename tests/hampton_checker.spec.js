@@ -4,6 +4,8 @@ import { Components } from "../components";
 import { publish } from "../src/publisher";
 
 test.describe("Price check: ", async () => {
+  const csvPath = "curent_prices/hampton-price.csv";
+
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);
     await page.goto(
@@ -23,13 +25,6 @@ test.describe("Price check: ", async () => {
       component.hampton.totalForStayAmount
     );
 
-    publish(
-      "curent_prices/hampton-price.csv",
-      roomType,
-      "n/a",
-      taxTotal,
-      onlineTotal,
-      rewardsTotal
-    );
+    publish(csvPath, roomType, "n/a", taxTotal, onlineTotal, rewardsTotal);
   });
 });

@@ -8,6 +8,7 @@ test.describe("Price check: ", async () => {
   const checkInDate = "12/19/2023";
   const checkOutDate = "12/26/2023";
   const myDate = moment().format("MM-D-YYYY");
+  const csvPath = "curent_prices/skicb-price.csv";
 
   test.beforeEach(async ({ page }) => {
     await page.goto(
@@ -48,7 +49,7 @@ test.describe("Price check: ", async () => {
         component.skibd.rewardsTotal
       );
       publish(
-        "curent_prices/skicb-price.csv",
+        csvPath,
         pricePromo,
         subtotal,
         taxesFees,
@@ -59,8 +60,7 @@ test.describe("Price check: ", async () => {
         path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
       });
     } catch (error) {
-      console.log("There is no third option to test out");
-      console.log("Type of error: " + error);
+      console.log(`There is no ${option + 1}-th option to test out`);
       test.skip();
     }
   }

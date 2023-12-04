@@ -8,6 +8,7 @@ test.describe("Price check: ", async () => {
   const checkInDate = "03/09/2024";
   const checkOutDate = "03/16/2024";
   const myDate = moment().format("MM-D-YYYY");
+  const csvPath = "curent_prices/hilton-price.csv";
 
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);
@@ -26,7 +27,7 @@ test.describe("Price check: ", async () => {
     const taxesFees = "n/a";
 
     publish(
-      "curent_prices/hilton-price.csv",
+      csvPath,
       pricePromo,
       subtotal,
       taxesFees,

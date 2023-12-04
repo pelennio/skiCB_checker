@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="#" />
+    <!-- <link rel="shortcut icon" href="#" /> -->
+    <link rel="icon" href="../src/images/skicbIcon.ico" />
     <title>😺 SkiCB price checker</title>
-    <!-- Load papaparse.js -->
-    <script src="../src/papaparse.min.js"></script>
 
     <!-- Load stylesheets -->
     <link rel="stylesheet" href="../stylesheets/style.css" />
-    <!-- <link rel="stylesheet" href="../stylesheets/font-awesome.min.css" /> -->
     <link rel="stylesheet" href="../stylesheets/c3.css" type="text/css" />
 
-    <!-- Load d3.js and c3.js -->
+    <!-- Load d3.js and c3.js, papaparse.js -->
     <script src="../src/d3.v3.min.js" charset="utf-8"></script>
     <script src="../src/c3.min.js"></script>
+    <script src="../src/papaparse.min.js"></script>
+    <script type="module" src="../src/scriptSkiCB.js"></script>
   </head>
 
   <body>
@@ -75,8 +75,5 @@
     <div class="container">
       <div id="chart4"></div>
     </div>
-
-    <script type="module" src="../src/scriptSkiCB.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
