@@ -1,19 +1,8 @@
-parseData(createGraph, "Standard Price", "STANDARD ROOM RATE", "#chart");
-parseData(createGraph, "Book early deal", "BWE", "#chart2");
-parseData(
-  createGraph,
-  "PASS HOLDER EXCLUSIVE CYBER SALE",
-  "PASS HOLDER EXCLUSIVE CYBER SALE",
-  "#chart3"
-);
-parseData(createGraph, "EXTENDED SNOWCATION", "EXTENDED SNOWCATION", "#chart4");
-lastPrace(createGraphSmall, "#chart5");
-
 /*
  * Parse the data and create a graph with the data.
  */
-function parseData(createGraph, priceType, dealType, placer) {
-  Papa.parse("../curent_prices/price.csv", {
+export function parseData(csvPath, createGraph, priceType, dealType, placer) {
+  Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
       createGraph(results.data, priceType, dealType, placer);
@@ -21,8 +10,8 @@ function parseData(createGraph, priceType, dealType, placer) {
   });
 }
 
-function lastPrace(createGraphSmall, placer) {
-  Papa.parse("../curent_prices/price.csv", {
+export function lastPrace(csvPath, createGraphSmall, placer) {
+  Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
       createGraphSmall(results.data, placer);
@@ -30,7 +19,7 @@ function lastPrace(createGraphSmall, placer) {
   });
 }
 
-function createGraph(data, priceType, dealType, placer) {
+export function createGraph(data, priceType, dealType, placer) {
   let date = [];
   let price = [priceType];
 
@@ -81,7 +70,7 @@ function createGraph(data, priceType, dealType, placer) {
 
 ///
 
-function createGraphSmall(data, placer) {
+export function createGraphSmall(data, placer) {
   let dealName = [];
   let dealPrice = ["Last Price"];
   const lastDate = data[data.length - 1][0];
