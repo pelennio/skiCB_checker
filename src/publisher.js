@@ -88,7 +88,12 @@ export async function publish(
     }
     output[Object.keys(output)[Object.keys(output).length - 1]].ChangeVector =
       changeVector;
-    console.log("New values added to the list: *******\n", lastPriceData);
+    console.log(
+      "New values added to the list: ",
+      filePath,
+      "\n",
+      lastPriceData
+    );
 
     ///WRITING results to the .csv file
     writeToPath(filePath, output, { headers: true });

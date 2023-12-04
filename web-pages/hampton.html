@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="#" />
+    <title>😺 HAMPTON price checker</title>
+    <!-- Load papaparse.js -->
+    <script src="../src/papaparse.min.js"></script>
+    <!-- Load stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <!-- <link rel="stylesheet" href="../stylesheets/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="../stylesheets/c3.css" type="text/css" />
+    <!-- Load d3.js and c3.js -->
+    <script src="../src/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../src/c3.min.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <h1 id="header">The price changes from Hampton Inn & Suites Dalhart</h1>
+      <a
+        href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=AMADHHX&arrivalDate=2023-12-18&departureDate=2023-12-19&room1NumAdults=1"
+        >Hampton Inn & Suites Dalhart
+      </a>
+      <img
+        overflow="hidden"
+        max-width="50"
+        class="picture_img__ReQUN"
+        src="https://www.hilton.com/im/en/AMADHHX/19066011/amadhhx-exterior-day-1.png?impolicy=crop&amp;cw=4500&amp;ch=2372&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=313&amp;rw=1100&amp;rh=580"
+        alt="Hotel Exterior"
+      />
+    </div>
+    <br /><br /><br />
+    <div class="container">
+      <div id="chart5"></div>
+    </div>
+    <br /><br /><br />
+
+    <div class="container">
+      <div id="chart"></div>
+    </div>
+    <br /><br /><br />
+    <div class="container">
+      <div id="chart2"></div>
+    </div>
+    <br /><br /><br />
+    <div class="container">
+      <div id="chart3"></div>
+    </div>
+    <br /><br /><br />
+    <div class="container">
+      <div id="chart4"></div>
+    </div>
+
+    <script type="module" src="../src/scriptHampton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
