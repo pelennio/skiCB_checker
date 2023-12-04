@@ -42,7 +42,7 @@ test.describe("Price check: ", async () => {
       component.skibd.rewardsTotal
     );
     publish(
-      "curent_prices/price.csv",
+      "curent_prices/skicb-price.csv",
       pricePromo,
       subtotal,
       taxesFees,
@@ -81,7 +81,7 @@ test.describe("Price check: ", async () => {
       component.skibd.rewardsTotal
     );
     publish(
-      "curent_prices/price.csv",
+      "curent_prices/skicb-price.csv",
       pricePromo,
       subtotal,
       taxesFees,
@@ -123,7 +123,7 @@ test.describe("Price check: ", async () => {
         component.skibd.rewardsTotal
       );
       publish(
-        "curent_prices/price.csv",
+        "curent_prices/skicb-price.csv",
         pricePromo,
         subtotal,
         taxesFees,
