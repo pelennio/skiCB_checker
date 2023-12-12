@@ -22,7 +22,7 @@ export function parseData(csvPath, createGraph, priceType, dealType, placer) {
  * @param {function} createGraphSmall the function for graph creating with only latest data
  * @param {string} placer web element the graph to be placed in
  */
-export function lastPrace(csvPath, createGraphSmall, placer) {
+export function lastPrice(csvPath, createGraphSmall, placer) {
   Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
