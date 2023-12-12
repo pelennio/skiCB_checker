@@ -1,6 +1,7 @@
 // @ts-check
 const { test } = require("@playwright/test");
 const moment = require("moment");
+import { ADDRGETNETWORKPARAMS } from "dns";
 import { Components } from "../components";
 import { publish } from "../src/publisher";
 
@@ -32,6 +33,39 @@ test.describe("Price check: ", async () => {
       subtotal,
       taxesFees,
       onlineTotal,
+      rewardsTotal
+    );
+  });
+
+  test("2-st room option: Hilton Garden Inn  Houston", async ({ page }) => {
+    const component = new Components(page);
+    await page.goto(
+      "https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=HOUSIGI&arrivalDate=2024-01-26&departureDate=2024-01-28&room1NumAdults=2&room1NumChildren=2"
+    );
+    await component.hilton.morePriceButton.click();
+    const pricePerNight =
+      await component.hilton.flex_honor_night_price.innerText();
+    console.log("pricePerNight: ", pricePerNight);
+
+    const pricePromo = await component.hilton.flex_title.innerText();
+    console.log("pricePromo: ", pricePromo);
+
+    await component.hilton.flex_book_button.click();
+    const subtotal = "n/a";
+    const taxesFees = (await component.hilton.total_tax.innerText()).split(
+      "\n",
+      3
+    )[1];
+    console.log("taxesFees: ", taxesFees);
+
+    const rewardsTotal = await component.hilton.total_per_stay.innerText();
+
+    publish(
+      csvPath,
+      pricePromo,
+      subtotal,
+      taxesFees,
+      pricePerNight,
       rewardsTotal
     );
   });

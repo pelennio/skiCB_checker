@@ -22,11 +22,11 @@ export function parseData(csvPath, createGraph, priceType, dealType, placer) {
  * @param {function} createGraphSmall the function for graph creating with only latest data
  * @param {string} placer web element the graph to be placed in
  */
-export function lastPrice(csvPath, createGraphSmall, placer) {
+export function lastPrice(csvPath, createGraphSmall, placer, filter) {
   Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
-      createGraphSmall(results.data, placer);
+      createGraphSmall(results.data, placer, filter);
     },
   });
 }
@@ -82,18 +82,29 @@ export function createGraph(data, priceType, dealType, placer) {
 
 ///
 
-export function createGraphSmall(data, placer) {
+export function createGraphSmall(data, placer, filter) {
   let dealName = [];
   let dealPrice = ["Last Price"];
   const lastDate = data[data.length - 1][0];
   console.log("lastDate: " + lastDate);
 
   for (var i = data.length - 1; i > 0; i--) {
-    if (data[i][0] == lastDate) {
-      dealName.push(data[i][2]);
-      dealPrice.push(Number(data[i][6].split("$")[1]));
+    if (filter == undefined) {
+      if (data[i][0] == lastDate) {
+        dealName.push(data[i][2]);
+        dealPrice.push(Number(data[i][6].split("$")[1]));
+      } else {
+        break;
+      }
     } else {
-      break;
+      if (data[i][0] == lastDate) {
+        if (data[i][2] == filter) {
+          dealName.push(data[i][2]);
+          dealPrice.push(Number(data[i][6].split("$")[1]));
+        }
+      } else {
+        break;
+      }
     }
   }
 
