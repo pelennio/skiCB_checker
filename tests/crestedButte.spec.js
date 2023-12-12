@@ -1,7 +1,5 @@
-var checkInDate = "2024-11-19",
-  checkOutDate = "2024-11-26";
 const { test } = require("@playwright/test");
-
+import { Dates } from "../components/dates.js";
 import { Components } from "../components";
 import { publish } from "../src/publisher.js";
 
@@ -10,8 +8,11 @@ test.describe("Price check: ", async () => {
 
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);
-
-    // checkOutDate = checkOutDate;
+    const dates = new Dates();
+    const checkInDate = dates.checkInDate;
+    const checkOutDate = dates.checkOutDate;
+    console.log("checkInDate: ", checkInDate);
+    console.log("checkOutDate: ", checkOutDate);
     await page.goto(
       `https://www.airbnb.com/rooms/42709896?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
     );

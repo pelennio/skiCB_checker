@@ -4,8 +4,6 @@ import { Skibd } from "./skibd";
 import { Hilton } from "./hilton";
 import { Hampton } from "./hampton";
 import { CrestedButteAirbNB } from "./crestedButteAirbNB";
-export { Skibd, Hilton, Hampton };
-
 export class Components {
   public skibd: Skibd;
   public hilton: Hilton;

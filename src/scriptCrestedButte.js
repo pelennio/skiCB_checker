@@ -1,6 +1,12 @@
 import * as graph from "./graphBuilder.js";
-var checkInDate = "2024-11-19",
-  checkOutDate = "2024-11-26";
+// place where you need it
+import { Dates } from "../components/dates.js";
+// var checkInDate = "2024-11-18",
+//   checkOutDate = "2024-11-26";
+
+const dates = new Dates();
+const checkInDate = dates.checkInDate;
+const checkOutDate = dates.checkOutDate;
 
 const any = "The Woodcreek West Retreat - Fireplace, Hot Tub!";
 const csvPath = "../curent_prices/cbAirbNB.csv";
