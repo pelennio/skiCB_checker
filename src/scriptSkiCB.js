@@ -36,4 +36,4 @@ graph.parseData(
   "EXTENDED SNOWCATION",
   "#chart4"
 );
-graph.lastPrace(csvPath, graph.createGraphSmall, "#chart5");
+graph.lastPrice(csvPath, graph.createGraphSmall, "#chart5");

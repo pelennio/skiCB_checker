@@ -10,7 +10,7 @@ graph.parseData(
   any1,
   "#chart"
 );
-graph.lastPrace(csvPath, graph.createGraphSmall, "#chart5");
+graph.lastPrice(csvPath, graph.createGraphSmall, "#chart5");
 
 graph.parseData(
   csvPath,
