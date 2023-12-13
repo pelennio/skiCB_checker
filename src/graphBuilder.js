@@ -65,8 +65,9 @@ export function createGraph(data, priceType, dealType, placer) {
 
         tick: {
           multiline: false,
+          fit: true,
           culling: {
-            max: 20,
+            max: 15,
           },
         },
       },
@@ -86,7 +87,7 @@ export function createGraphSmall(data, placer, filter) {
   let dealName = [];
   let dealPrice = ["Last Price"];
   const lastDate = data[data.length - 1][0];
-  console.log("lastDate: " + lastDate);
+  console.log("Building graph for - lastDate: " + lastDate);
 
   for (var i = data.length - 1; i > 0; i--) {
     if (filter == undefined) {
@@ -129,7 +130,9 @@ export function createGraphSmall(data, placer, filter) {
         categories: dealName,
 
         tick: {
-          multiline: false,
+          multiline: true,
+          // culling: false,
+          fit: true,
           culling: {
             max: 20,
           },
@@ -137,7 +140,7 @@ export function createGraphSmall(data, placer, filter) {
       },
     },
     legend: {
-      position: "bottom",
+      position: "inset",
     },
   });
 }

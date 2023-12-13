@@ -1,19 +1,13 @@
-import * as graph from "./graphBuilder.js";
+import * as graph from "../graphBuilder.js";
 const csvPath = "../curent_prices/skicb-price.csv";
 
+graph.lastPrice(csvPath, graph.createGraphSmall, "#small-chart1");
 graph.parseData(
   csvPath,
   graph.createGraph,
   "Standard Price",
   "STANDARD ROOM RATE",
-  "#chart"
-);
-graph.parseData(
-  csvPath,
-  graph.createGraph,
-  "EARLY SKI",
-  "EARLY SKI SEASON OFFER",
-  "#chart6"
+  "#chart1"
 );
 graph.parseData(
   csvPath,
@@ -22,6 +16,7 @@ graph.parseData(
   "BWE",
   "#chart2"
 );
+
 graph.parseData(
   csvPath,
   graph.createGraph,
@@ -29,6 +24,7 @@ graph.parseData(
   "PASS HOLDER EXCLUSIVE CYBER SALE",
   "#chart3"
 );
+
 graph.parseData(
   csvPath,
   graph.createGraph,
@@ -36,4 +32,11 @@ graph.parseData(
   "EXTENDED SNOWCATION",
   "#chart4"
 );
-graph.lastPrice(csvPath, graph.createGraphSmall, "#chart5");
+
+graph.parseData(
+  csvPath,
+  graph.createGraph,
+  "EARLY SKI",
+  "EARLY SKI SEASON OFFER",
+  "#chart5"
+);

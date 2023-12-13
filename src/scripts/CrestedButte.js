@@ -1,6 +1,6 @@
-import * as graph from "./graphBuilder.js";
+import * as graph from "../graphBuilder.js";
 // place where you need it
-import { Dates } from "../components/dates.js";
+import { Dates } from "../../components/dates.js";
 // var checkInDate = "2024-11-18",
 //   checkOutDate = "2024-11-26";
 
@@ -11,7 +11,7 @@ const checkOutDate = dates.checkOutDate;
 const any = "The Woodcreek West Retreat - Fireplace, Hot Tub!";
 const csvPath = "../curent_prices/cbAirbNB.csv";
 const details = `The price for the stay from ${checkInDate} to ${checkOutDate}`;
-let placeholder = document.querySelector("#data-output");
+let placeholder = document.querySelector("#search-details");
 placeholder.innerHTML = details;
 
 graph.parseData(
@@ -21,4 +21,4 @@ graph.parseData(
   any,
   "#chart"
 );
-graph.lastPrice(csvPath, graph.createGraphSmall, "#chart5");
+graph.lastPrice(csvPath, graph.createGraphSmall, "#small-chart1");

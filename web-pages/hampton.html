@@ -13,7 +13,7 @@
     <!-- Load d3.js and c3.js -->
     <script src="../src/d3.v3.min.js" charset="utf-8"></script>
     <script src="../src/c3.min.js"></script>
-    <script type="module" src="../src/scriptHampton.js"></script>
+    <script type="module" src="../src/scripts/Hampton.js"></script>
   </head>
 
   <body>
@@ -28,6 +28,7 @@
       <a href="hampton.html">Hampton</a>
       <a href="crestedButte.html">AirbNB</a>
     </div>
+
     <div class="dataSet">
       <div class="flex relative container">
         <div class="flex-1 overflow-hidden relative center">
@@ -48,20 +49,26 @@
               >
                 <span> 700 Liberal Street Dalhart, Texas 79022 USA </span>
               </a>
+              <br /><br />
+              <div id="search-details"></div>
             </div>
           </div>
         </div>
 
         <div class="flex-1 overflow-hidden relative">
-          <div class="container">
-            <div id="chart5"></div>
+          <div>
+            <div id="last-chart1"></div>
           </div>
         </div>
       </div>
       <br /><br />
 
       <div class="container">
-        <div id="chart"></div>
+        <div id="chart1"></div>
+      </div>
+
+      <div class="container">
+        <div id="chart2"></div>
       </div>
     </div>
   </body>

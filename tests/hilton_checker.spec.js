@@ -57,9 +57,13 @@ test.describe("Price check: ", async () => {
       3
     )[1];
     console.log("taxesFees: ", taxesFees);
+    let rewardsTotal = "";
+    if (await component.hilton.total_per_stay.textContent()) {
+      // @ts-ignore
+      rewardsTotal = await component.hilton.total_per_stay.textContent();
+    }
 
-    const rewardsTotal = await component.hilton.total_per_stay.innerText();
-
+    console.log("rewardsTotal: ", rewardsTotal);
     publish(
       csvPath,
       pricePromo,
