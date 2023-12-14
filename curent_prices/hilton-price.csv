@@ -29,3 +29,5 @@ Date,DayOfWeek,Package,Subtotal,Taxes&Fees,OnlineTotal,RewardsTotal,ChangeVector
 12-13-2023,Wednesday,Flexible Rate,n/a,‌,$130,$301.66,🟰
 12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,⬆︎ (69)
 12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,⬇︎ (-8)
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,🟰
+12-14-2023,Thursday,Flexible Rate,n/a,‌,$127,‌,⬇︎ (NaN)
