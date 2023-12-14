@@ -20,6 +20,6 @@ graph.parseData(
   "#chart2"
 );
 
-const details = `This hotel we are going to stay during trip to Crested BUte`;
+const details = `This hotel we are going to stay during trip to Crested Butte /n Booked -> Total for stay: 45,000 Points`;
 let placeholder = document.querySelector("#search-details");
 placeholder.innerHTML = details;

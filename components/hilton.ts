@@ -47,6 +47,9 @@ export class Hilton {
   get total_per_stay() {
     return this.page.getByTestId("totalForStayAmount");
   }
+  get full_total_per_stay() {
+    return this.page.getByTestId("totalForStay");
+  }
   get total_tax() {
     return this.page.locator(".PriceSummary_priceLine__aOf8m").last();
   }
