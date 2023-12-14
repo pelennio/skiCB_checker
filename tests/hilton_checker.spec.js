@@ -52,16 +52,13 @@ test.describe("Price check: ", async () => {
 
     await component.hilton.flex_book_button.click();
     const subtotal = "n/a";
-    const taxesFees = (await component.hilton.total_tax.innerText()).split(
-      "\n",
-      3
-    )[1];
+    const taxesFees = (
+      await component.hilton.total_tax.innerText({ timeout: 3000 })
+    ).split("\n", 3)[1];
     console.log("taxesFees: ", taxesFees);
-    let rewardsTotal = "";
-    if (await component.hilton.total_per_stay.textContent()) {
-      // @ts-ignore
-      rewardsTotal = await component.hilton.total_per_stay.textContent();
-    }
+    let rewardsTotal = await component.hilton.total_per_stay.innerText({
+      timeout: 1000,
+    });
 
     console.log("rewardsTotal: ", rewardsTotal);
     publish(
@@ -70,6 +67,7 @@ test.describe("Price check: ", async () => {
       subtotal,
       taxesFees,
       pricePerNight,
+      // @ts-ignore
       rewardsTotal
     );
   });
