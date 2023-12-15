@@ -2,9 +2,15 @@ const { test } = require("@playwright/test");
 import { Dates } from "../components/dates.js";
 import { Components } from "../components";
 import { publish } from "../src/publisher.js";
+import { removeDuplicatesFromResults } from "../src/duplicate-remover.js";
 
 test.describe("Price check: ", async () => {
   const csvPath = "curent_prices/cbAirbNB.csv";
+
+  test.afterAll("Teardown", async () => {
+    console.log("csvPath: ", csvPath, `\n`, "**********");
+    await removeDuplicatesFromResults(csvPath);
+  });
 
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);

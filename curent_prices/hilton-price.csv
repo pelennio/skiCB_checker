@@ -1,13 +1,11 @@
 Date,DayOfWeek,Package,Subtotal,Taxes&Fees,OnlineTotal,RewardsTotal,ChangeVector
 11-29-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6968,⬆︎ (6968)
-11-29-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6968,⬆︎ (6968)
 11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6968,🟰
 11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6967,⬇︎ (-1)
 12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,⬆︎ (387)
 12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7355,⬆︎ (1)
 12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7355,🟰
 12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,⬇︎ (-1)
-12-3-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
 12-3-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
 12-4-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
 12-5-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
@@ -31,8 +29,9 @@ Date,DayOfWeek,Package,Subtotal,Taxes&Fees,OnlineTotal,RewardsTotal,ChangeVector
 12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,⬇︎ (-8)
 12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,🟰
 12-14-2023,Thursday,Flexible Rate,n/a,‌,$127,‌,⬇︎ (NaN)
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,🟰
-12-14-2023,Thursday,Flexible Rate,n/a,‌,$127,‌,⬇︎ (NaN)
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,🟰
 12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,⬇︎ (NaN)
 12-14-2023,Thursday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,⬆︎ (118)
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,055",$7386,⬇︎ (-441)
+12-14-2023,Thursday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
+12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,🟰
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,055",$7386,🟰
