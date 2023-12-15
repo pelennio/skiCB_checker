@@ -2,7 +2,6 @@
 const { test } = require("@playwright/test");
 import { Components } from "../components";
 import { publish } from "../src/publisher";
-import { removeDuplicatesFromResults } from "../src/duplicate-remover.js";
 
 test.describe("Price check: ", async () => {
   const csvPath = "curent_prices/hampton-price.csv";
@@ -37,11 +36,6 @@ test.describe("Price check: ", async () => {
       rewardsTotal
     );
   }
-
-  test.afterAll("Teardown", async () => {
-    console.log("csvPath: ", csvPath, `\n`, "**********");
-    await removeDuplicatesFromResults(csvPath);
-  });
 
   test("1-st room option", async ({ page }) => {
     await checkPrice("2023-12-18", "2023-12-19", "first", { page });

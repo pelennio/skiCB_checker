@@ -3,18 +3,12 @@ const { test } = require("@playwright/test");
 const moment = require("moment");
 import { Components } from "../components";
 import { publish } from "../src/publisher";
-import { removeDuplicatesFromResults } from "../src/duplicate-remover.js";
 
 test.describe("Price check: ", async () => {
   const checkInDate = "03/09/2024";
   const checkOutDate = "03/16/2024";
   const myDate = moment().format("MM-D-YYYY");
   const csvPath = "curent_prices/hilton-price.csv";
-
-  test.afterAll("Teardown", async () => {
-    console.log("csvPath: ", csvPath, `\n`, "**********");
-    await removeDuplicatesFromResults(csvPath);
-  });
 
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);

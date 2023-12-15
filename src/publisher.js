@@ -30,6 +30,7 @@ export async function publish(
   const day = weekday[moment().weekday()];
 
   async function writeTheResults() {
+    //parse CSV file
     let myList = new Promise((resolve) => {
       let myObj = [];
       csv
@@ -45,6 +46,7 @@ export async function publish(
 
     let output = await myList;
     let changeVector = "";
+    //adding test results data
     await output.push({
       Date: `${myDate}`,
       DayOfWeek: `${day}`,
@@ -93,8 +95,18 @@ export async function publish(
       "\n",
       lastPriceData
     );
+    console.log("Initial array contains :", output.length);
 
-    ///WRITING results to the .csv file
+    async function removeDuplicates() {
+      let jsonObject = output.map(JSON.stringify);
+      let uniqueSet = new Set(jsonObject);
+      let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+      console.log("De-dup array contains :", Object.keys(uniqueArray).length);
+      return uniqueArray;
+    }
+    output = await removeDuplicates();
+
+    ///WRITING deuplicated  results to the CSV file
     writeToPath(filePath, output, { headers: true });
   }
   await writeTheResults();
