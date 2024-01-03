@@ -5,8 +5,8 @@ import { Components } from "../components";
 import { publish } from "../src/publisher";
 
 test.describe("Price check: ", async () => {
-  const checkInDate = "12/19/2023";
-  const checkOutDate = "12/26/2023";
+  const checkInDate = "12/19/2024";
+  const checkOutDate = "12/26/2024";
   const myDate = moment().format("MM-D-YYYY");
   const csvPath = "curent_prices/skicb-price.csv";
 
@@ -17,7 +17,7 @@ test.describe("Price check: ", async () => {
   });
 
   /**
-   * @param {number} option
+   * @param {number} option the number of option among price deal
    */
   async function testPrice(option, { page }) {
     const component = new Components(page);

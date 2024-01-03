@@ -37,10 +37,10 @@ test.describe("Price check: ", async () => {
     );
   }
 
-  test("1-st room option", async ({ page }) => {
+  test.skip("1-st room option", async ({ page }) => {
     await checkPrice("2023-12-18", "2023-12-19", "first", { page });
   });
-  test("2-st room option", async ({ page }) => {
+  test.skip("2-st room option", async ({ page }) => {
     await checkPrice("2023-12-26", "2023-12-27", "second", { page });
   });
 });

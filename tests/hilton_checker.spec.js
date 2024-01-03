@@ -67,7 +67,9 @@ test.describe("Price check: ", async () => {
     );
   });
 
-  test("3-st room option: Tru by Hilton Amarillo West", async ({ page }) => {
+  test.skip("3-st room option: Tru by Hilton Amarillo West", async ({
+    page,
+  }) => {
     const component = new Components(page);
     await page.goto(
       "https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=AMATXRU&arrivalDate=2023-12-26&departureDate=2023-12-27&room1NumAdults=2&room1NumChildren=2"
