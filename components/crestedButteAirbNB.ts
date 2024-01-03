@@ -12,10 +12,22 @@ export class CrestedButteAirbNB {
       .getByRole("heading");
   }
   get pricePerNight() {
-    return this.page.locator("._1jo4hgw ._tyxjp1");
+    return this.page.locator("._1jo4hgw");
   }
   get pricePerStay() {
     return this.page.locator("._1qs94rc ._j1kt73");
+  }
+
+  get reserveButton() {
+    return this.page.getByRole("button", { name: "Reserve" });
+  }
+
+  get taxesTotal() {
+    return this.page.getByTestId("price-item-TAXES");
+  }
+
+  get stayTotalPrice() {
+    return this.page.getByTestId("price-item-total");
   }
 
   priceDetail(element: Locator) {

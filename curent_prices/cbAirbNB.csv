@@ -1,13 +1,7 @@
-Date,DayOfWeek,Package,Subtotal,Taxes&Fees,OnlineTotal,RewardsTotal,ChangeVector
-12-11-2023,Monday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$189 ,$1897,⬆︎ (1897)
-12-12-2023,Tuesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$189 ,$1897,🟰
-12-13-2023,Wednesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$189 ,$1897,🟰
-12-14-2023,Thursday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$189 ,$1897,🟰
-12-15-2023,Friday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$189 ,$1897,🟰
-12-15-2023,Friday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$213 ,$2114,⬆︎ (217)
-12-15-2023,Friday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$213 ,$2114,🟰
-12-16-2023,Saturday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$213 ,$2114,🟰
-12-17-2023,Sunday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$213 ,$2114,🟰
-12-18-2023,Monday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$283 ,$2756,⬆︎ (642)
-12-18-2023,Monday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$283 ,$2756,🟰
-12-19-2023,Tuesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$283 ,$2756,🟰
+Date,DayOfWeek,Package,PricePerNight,Taxes&Fees,StayTotal,ChangeVector
+01-2-2024,Tuesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",n/a,n/a,$2287,⬇︎ (-469)
+01-2-2024,Tuesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",$261 ,$350.77,$2637.40,🟰
+01-3-2024,Wednesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",$261 ,$350.77,$2637.40,🟰
+01-3-2024,Wednesday,"The Woodcreek West Retreat - Fireplace, Hot Tub!",$261 night,$350.77,$2637.40,🟰
+01-3-2024,Wednesday,"Ski in/out,50Ft from Lift,Sleeps 7.Luxury Remodel!",$350 $315 night,$412.26,$3099.73,⬆︎ (3100)
+01-3-2024,Wednesday,Easy Mountain,$221 night,$294.85,$2216.93,⬆︎ (2217)

@@ -1,47 +1,77 @@
 const { test } = require("@playwright/test");
 import { Dates } from "../components/dates.js";
 import { Components } from "../components";
-import { publish } from "../src/publisher.js";
+import { publish } from "../src/publisher1.js";
 
 test.describe("Price check: ", async () => {
   const csvPath = "curent_prices/cbAirbNB.csv";
+  const dates = new Dates();
+  const checkInDate = dates.checkInDate;
+  const checkOutDate = dates.checkOutDate;
 
   test("1-st room option", async ({ page }) => {
     const component = new Components(page);
-    const dates = new Dates();
-    const checkInDate = dates.checkInDate;
-    const checkOutDate = dates.checkOutDate;
-    console.log("checkInDate: ", checkInDate);
-    console.log("checkOutDate: ", checkOutDate);
+    const propertyID = "42709896";
     await page.goto(
-      `https://www.airbnb.com/rooms/42709896?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
+      `https://www.airbnb.com/rooms/${propertyID}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
     );
-
     const pricePromo = await component.cbAirbNB.dealHeader.innerText();
-
-    console.log("pricePromo: ", pricePromo);
-    const onlineTotal = await component.cbAirbNB.pricePerNight
+    const pricePerNight = await component.cbAirbNB.pricePerNight
       .first()
       .innerText();
-    console.log("onlineTotal: ", onlineTotal);
-    const rewardsTotal = (
+    await component.cbAirbNB.reserveButton.click();
+    const taxesFees = await component.cbAirbNB.taxesTotal.innerText();
+    const stayTotal = (
       await component.cbAirbNB.priceWithRemovedComa(
-        component.cbAirbNB.pricePerStay
+        component.cbAirbNB.stayTotalPrice
       )
     )
       .split(" ", 1)
       .toString();
-    console.log("rewardsTotal: ", rewardsTotal);
-    const subtotal = "n/a";
-    const taxesFees = "n/a";
+    publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+  });
 
-    publish(
-      csvPath,
-      pricePromo,
-      subtotal,
-      taxesFees,
-      onlineTotal,
-      rewardsTotal
+  test("2-st room option", async ({ page }) => {
+    const component = new Components(page);
+    const propertyID = "738343714490717816";
+    await page.goto(
+      `https://www.airbnb.com/rooms/${propertyID}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
     );
+    const pricePromo = await component.cbAirbNB.dealHeader.innerText();
+    const pricePerNight = await component.cbAirbNB.pricePerNight
+      .first()
+      .innerText();
+    await component.cbAirbNB.reserveButton.click();
+    const taxesFees = await component.cbAirbNB.taxesTotal.innerText();
+    const stayTotal = (
+      await component.cbAirbNB.priceWithRemovedComa(
+        component.cbAirbNB.stayTotalPrice
+      )
+    )
+      .split(" ", 1)
+      .toString();
+    publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+  });
+
+  test("3-st room option", async ({ page }) => {
+    const component = new Components(page);
+    const propertyID = "45972067";
+    await page.goto(
+      `https://www.airbnb.com/rooms/${propertyID}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
+    );
+    const pricePromo = await component.cbAirbNB.dealHeader.innerText();
+    const pricePerNight = await component.cbAirbNB.pricePerNight
+      .first()
+      .innerText();
+    await component.cbAirbNB.reserveButton.click();
+    const taxesFees = await component.cbAirbNB.taxesTotal.innerText();
+    const stayTotal = (
+      await component.cbAirbNB.priceWithRemovedComa(
+        component.cbAirbNB.stayTotalPrice
+      )
+    )
+      .split(" ", 1)
+      .toString();
+    publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
   });
 });

@@ -3,7 +3,7 @@ export class Dates {
   checkOutDate;
 
   constructor() {
-    this.checkInDate = "2024-11-18";
-    this.checkOutDate = "2024-11-26";
+    this.checkInDate = "2024-12-19";
+    this.checkOutDate = "2024-12-26";
   }
 }
