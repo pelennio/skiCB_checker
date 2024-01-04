@@ -3,6 +3,7 @@ const { test } = require("@playwright/test");
 const moment = require("moment");
 import { Components } from "../components";
 import { publish } from "../src/publisher";
+// https://www.skicb.com/plan-your-trip/lift-access/passes.aspx
 
 test.describe("Price check: ", async () => {
   const checkInDate = "12/19/2024";

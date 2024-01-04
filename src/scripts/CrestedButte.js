@@ -13,6 +13,8 @@ async function getLink(propertyID) {
   console.log("Link: ", link);
   return link;
 }
+//for new tests
+//https://www.airbnb.com/s/Mt-Crested-Butte--Colorado--USA/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-02-01&monthly_length=3&query=Mt%20Crested%20Butte%2C%20CO&place_id=ChIJ_ew67ZttQIcRghQKyP89KzY&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=2024-12-19&checkout=2024-12-26&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&ne_lat=38.89856079607466&ne_lng=-106.96540563507915&sw_lat=38.89447370838086&sw_lng=-106.96752406649836&zoom=18.209586056623746&zoom_level=18.209586056623746&search_by_map=true
 
 async function setGraphsPerStay(option, packageDetails) {
   const title = document.querySelector(`${option} .propertyName`);
@@ -104,6 +106,15 @@ const package7 = {
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
+const package8 = {
+  name: "Ski In/Out at Base Area-Hot Tub, Walk to Lifts,Spa",
+  link: await getLink("570325193548210419"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-570325193548210419/original/92ad8a20-ad0c-4769-b561-f8d24ed7b39a.jpeg?im_w=720",
+  address: "not sure but close",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
 setGraphsPerStay(".option_1", package1);
 setGraphsPerStay(".option_2", package2);
 setGraphsPerStay(".option_3", package3);
@@ -111,3 +122,4 @@ setGraphsPerStay(".option_4", package4);
 setGraphsPerStay(".option_5", package5);
 setGraphsPerStay(".option_6", package6);
 setGraphsPerStay(".option_7", package7);
+setGraphsPerStay(".option_8", package8);
