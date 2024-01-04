@@ -1,67 +1,68 @@
-Date,DayOfWeek,Package,Subtotal,Taxes&Fees,OnlineTotal,RewardsTotal,ChangeVector
-11-29-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6968,⬆︎ (6968)
-11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6968,🟰
-11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$995,$6967,⬇︎ (-1)
-12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,⬆︎ (387)
-12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7355,⬆︎ (1)
-12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7355,🟰
-12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,⬇︎ (-1)
-12-3-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
-12-4-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
-12-5-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,050",$7354,🟰
-12-5-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,067",$7469,⬆︎ (115)
-12-6-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,070",$7493,⬆︎ (24)
-12-6-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,070",$7493,🟰
-12-7-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,073",$7513,⬆︎ (20)
-12-7-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,073",$7513,🟰
-12-8-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,115",$7808,⬆︎ (295)
-12-8-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,115",$7809,⬆︎ (1)
-12-9-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,105",$7741,⬇︎ (-68)
-12-9-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,105",$7741,🟰
-12-10-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,064",$7451,⬇︎ (-290)
-12-10-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,064",$7451,🟰
-12-11-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,077",$7544,⬆︎ (93)
-12-11-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,068",$7479,⬇︎ (-65)
-12-12-2023,Tuesday,Flexible Rate,n/a,$39.35,$131,$301.66,🟰
-12-13-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,108",$7758,⬆︎ (279)
-12-13-2023,Wednesday,Flexible Rate,n/a,‌,$130,$301.66,🟰
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,⬆︎ (69)
-12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,⬇︎ (-8)
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,118",$7827,🟰
-12-14-2023,Thursday,Flexible Rate,n/a,‌,$127,‌,⬇︎ (NaN)
-12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,⬇︎ (NaN)
-12-14-2023,Thursday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,⬆︎ (118)
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,055",$7386,⬇︎ (-441)
-12-14-2023,Thursday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
-12-14-2023,Thursday,Flexible Rate,n/a,$38.33,$127,$293.86,🟰
-12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,055",$7386,🟰
-12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,055",$7386,🟰
-12-15-2023,Friday,Flexible Rate,n/a,$38.33,$127,$293.86,🟰
-12-15-2023,Friday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
-12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,⬇︎ (-271)
-12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,🟰
-12-15-2023,Friday,Flexible Rate,n/a,$39.19,$130,$300.42,⬆︎ (7)
-12-15-2023,Friday,Flexible Rate,n/a,$39.19,$130,$300.42,🟰
-12-16-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,🟰
-12-16-2023,Saturday,Flexible Rate,n/a,$39.19,$130,$300.42,🟰
-12-16-2023,Saturday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
-12-16-2023,Saturday,Flexible Rate,n/a,$39.92,$133,$306.04,⬆︎ (6)
-12-17-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,🟰
-12-17-2023,Sunday,Flexible Rate,n/a,$39.92,$133,$306.04,🟰
-12-17-2023,Sunday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
-12-17-2023,Sunday,Flexible Rate,n/a,$39.50,$131,$302.83,⬇︎ (-3)
-12-18-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,🟰
-12-18-2023,Monday,Flexible Rate,n/a,$39.50,$131,$302.83,🟰
-12-18-2023,Monday,Flexible Rate - Amarillo,n/a,$15.33,$102,$117.51,🟰
-12-18-2023,Monday,Flexible Rate,n/a,$40.20,$133,$308.18,⬆︎ (5)
-12-18-2023,Monday,Flexible Rate - Amarillo,n/a,$13.92,$92,$106.73,⬇︎ (-11)
-12-19-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,"$1,016",$7115,🟰
-12-19-2023,Tuesday,Flexible Rate,n/a,$40.20,$133,$308.18,🟰
-12-19-2023,Tuesday,Flexible Rate - Amarillo,n/a,$13.92,$92,$106.73,🟰
-01-3-2024,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$936,$6556,⬇︎ (-559)
-01-3-2024,Wednesday,Flexible Rate,n/a,$41.45,$138,$317.81,⬆︎ (10)
-01-3-2024,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$936,$6556,🟰
-01-3-2024,Wednesday,Flexible Rate,n/a,$41.45,$138,$317.81,🟰
-01-4-2024,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$936,$6556,🟰
-01-4-2024,Thursday,Flexible Rate,n/a,$41.45,$138,$317.81,🟰
-01-4-2024,Thursday,Flexible Rate,n/a,$40.90,$136,$313.54,⬇︎ (-4)
+Date,DayOfWeek,Package,PricePerNight,Taxes&Fees,StayTotal,ChangeVector
+11-29-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$995,n/a,$6968,⬆︎ (6968)
+11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$995,n/a,$6968,🟰
+11-30-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$995,n/a,$6967,⬇︎ (-1)
+12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7354,⬆︎ (387)
+12-1-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7355,⬆︎ (1)
+12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7355,🟰
+12-2-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7354,⬇︎ (-1)
+12-3-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7354,🟰
+12-4-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7354,🟰
+12-5-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1050,n/a,$7354,🟰
+12-5-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1067,n/a,$7469,⬆︎ (115)
+12-6-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1070,n/a,$7493,⬆︎ (24)
+12-6-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1070,n/a,$7493,🟰
+12-7-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1073,n/a,$7513,⬆︎ (20)
+12-7-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1073,n/a,$7513,🟰
+12-8-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1115,n/a,$7808,⬆︎ (295)
+12-8-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1115,n/a,$7809,⬆︎ (1)
+12-9-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1105,n/a,$7741,⬇︎ (-68)
+12-9-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1105,n/a,$7741,🟰
+12-10-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1064,n/a,$7451,⬇︎ (-290)
+12-10-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1064,n/a,$7451,🟰
+12-11-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1077,n/a,$7544,⬆︎ (93)
+12-11-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1068,n/a,$7479,⬇︎ (-65)
+12-12-2023,Tuesday,Flexible Rate,$131$39.35,$301.66,🟰,
+12-13-2023,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1108,n/a,$7758,⬆︎ (279)
+12-13-2023,Wednesday,Flexible Rate,$130,n/a‌,$301.66,🟰
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1118,n/a,$7827,⬆︎ (69)
+12-14-2023,Thursday,Flexible Rate,$127$38.33,$293.86,⬇︎ (-8),
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1118,n/a,$7827,🟰
+12-14-2023,Thursday,Flexible Rate,$127,$38.33,$293.86,⬇︎ (NaN)
+12-14-2023,Thursday,Flexible Rate - Amarillo,$102,$15.33,$117.51,⬆︎ (118)
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1055,n/a,$7386,⬇︎ (-441)
+12-14-2023,Thursday,Flexible Rate - Amarillo,$102,$15.33,$117.51,🟰
+12-14-2023,Thursday,Flexible Rate,$12,7$38.33,$293.86,🟰
+12-14-2023,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1055,n/a,$7386,🟰
+12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1055,n/a,$7386,🟰
+12-15-2023,Friday,Flexible Rate,$127,$38.33,$293.86,🟰
+12-15-2023,Friday,Flexible Rate - Amarillo,$102,$15.33,$117.51,🟰
+12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,⬇︎ (-271)
+12-15-2023,Friday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,🟰
+12-15-2023,Friday,Flexible Rate,$130,$39.19,$300.42,⬆︎ (7)
+12-15-2023,Friday,Flexible Rate,$130,$39.19,$300.42,🟰
+12-16-2023,Saturday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,🟰
+12-16-2023,Saturday,Flexible Rate,$130,$39.19,$300.42,🟰
+12-16-2023,Saturday,Flexible Rate - Amarillo,$102,$15.33,$117.51,🟰
+12-16-2023,Saturday,Flexible Rate,$133,$39.92,$306.04,⬆︎ (6)
+12-17-2023,Sunday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,🟰
+12-17-2023,Sunday,Flexible Rate,$133,$39.92,$306.04,🟰
+12-17-2023,Sunday,Flexible Rate - Amarillo,$102,$15.33,$117.51🟰,
+12-17-2023,Sunday,Flexible Rate,$131,$39.50,$302.83,⬇︎ (-3)
+12-18-2023,Monday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,🟰
+12-18-2023,Monday,Flexible Rate,$131,$39.50,$302.83,🟰
+12-18-2023,Monday,Flexible Rate - Amarillo,$102,$15.33,$117.51,🟰
+12-18-2023,Monday,Flexible Rate,$133,$40.20,$308.18,⬆︎ (5)
+12-18-2023,Monday,Flexible Rate - Amarillo,$92,$13.92,$106.73,⬇︎ (-11)
+12-19-2023,Tuesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$1016,n/a,$7115,🟰
+12-19-2023,Tuesday,Flexible Rate,$133,$40.20,$308.18,🟰
+12-19-2023,Tuesday,Flexible Rate - Amarillo,$92,$13.92,$106.73,🟰
+01-03-2024,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$936,n/a,$6556,⬇︎ (-559)
+01-03-2024,Wednesday,Flexible Rate,$138,$41.45,$317.81,⬆︎ (10)
+01-03-2024,Wednesday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$936,n/a,$6556,🟰
+01-03-2024,Wednesday,Flexible Rate,$138,$41.45,$317.81,🟰
+01-04-2024,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$936,n/a,$6556,🟰
+01-04-2024,Thursday,Flexible Rate,$138,$41.45,$317.81,🟰
+01-4-2024,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,n/a,n/a,$936,⬇︎ (-5620)
+01-4-2024,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$936,n/a,$6556,⬆︎ (5620)
+01-4-2024,Thursday,Flexible Rate,$136,$40.90,$313.54,⬇︎ (-4)

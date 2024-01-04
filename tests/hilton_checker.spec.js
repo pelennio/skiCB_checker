@@ -2,7 +2,7 @@
 const { test } = require("@playwright/test");
 const moment = require("moment");
 import { Components } from "../components";
-import { publish } from "../src/publisher";
+import { publish } from "../src/publisher1";
 
 test.describe("Price check: ", async () => {
   const checkInDate = "03/09/2024";
@@ -17,23 +17,15 @@ test.describe("Price check: ", async () => {
     );
 
     const pricePromo = await component.hilton.dealHeader.innerText();
-    const onlineTotal = await component.hilton.pricePerNight.innerText();
-    const rewardsTotal = (
+    const pricePerNight = await component.hilton.pricePerNight.innerText();
+    const stayTotal = (
       await component.hilton.priceWithRemovedComa(component.hilton.pricePerStay)
     )
       .split(" ", 1)
       .toString();
-    const subtotal = "n/a";
     const taxesFees = "n/a";
 
-    publish(
-      csvPath,
-      pricePromo,
-      subtotal,
-      taxesFees,
-      onlineTotal,
-      rewardsTotal
-    );
+    publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
   });
 
   test("2-st room option: Hilton Garden Inn  Houston", async ({ page }) => {
@@ -47,57 +39,22 @@ test.describe("Price check: ", async () => {
     const pricePromo = await component.hilton.flex_title.innerText();
     await component.hilton.flex_book_button.click();
     await page.waitForTimeout(3000);
-    const subtotal = "n/a";
-    let taxesFees = (
-      await component.hilton.total_tax.innerText({ timeout: 3000 })
-    ).split("\n", 3)[1];
-    console.log("taxesFees: ", taxesFees);
-    let rewardsTotal = await component.hilton.total_per_stay.innerText({
-      timeout: 3000,
-    });
-    console.log("rewardsTotal: ", rewardsTotal);
-    publish(
-      csvPath,
-      pricePromo,
-      subtotal,
-      taxesFees,
-      pricePerNight,
-      // @ts-ignore
-      rewardsTotal
-    );
-  });
 
-  test.skip("3-st room option: Tru by Hilton Amarillo West", async ({
-    page,
-  }) => {
-    const component = new Components(page);
-    await page.goto(
-      "https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=AMATXRU&arrivalDate=2023-12-26&departureDate=2023-12-27&room1NumAdults=2&room1NumChildren=2"
-    );
-    await component.hilton.morePriceButton.click();
-    const pricePerNight =
-      await component.hilton.flex_honor_night_price.innerText();
-    const pricePromo =
-      (await component.hilton.flex_title.innerText()) + " - Amarillo";
-    await component.hilton.flex_book_button.click();
-    await page.waitForTimeout(3000);
-    const subtotal = "n/a";
     let taxesFees = (
       await component.hilton.total_tax.innerText({ timeout: 3000 })
     ).split("\n", 3)[1];
     console.log("taxesFees: ", taxesFees);
-    let rewardsTotal = await component.hilton.total_per_stay.innerText({
+    let stayTotal = await component.hilton.total_per_stay.innerText({
       timeout: 3000,
     });
-    console.log("rewardsTotal: ", rewardsTotal);
+    console.log("stayTotal: ", stayTotal);
     publish(
       csvPath,
       pricePromo,
-      subtotal,
-      taxesFees,
       pricePerNight,
+      taxesFees,
       // @ts-ignore
-      rewardsTotal
+      stayTotal
     );
   });
 });

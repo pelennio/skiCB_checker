@@ -65,6 +65,7 @@ test.describe("Price check: ", async () => {
       test.skip();
     }
   }
+
   test("1-st room option", async ({ page }) => {
     await testPrice(0, { page });
   });
