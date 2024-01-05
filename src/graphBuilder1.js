@@ -8,7 +8,7 @@
  * @param {string} dealType the deal we tracking or a room type
  * @param {string} placer web element the graph to be placed in
  */
-export function parseData(csvPath, createGraph, priceType, dealType, placer) {
+async function parseData(csvPath, createGraph, priceType, dealType, placer) {
   Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
@@ -22,7 +22,7 @@ export function parseData(csvPath, createGraph, priceType, dealType, placer) {
  * @param {function} createGraphSmall the function for graph creating with only latest data
  * @param {string} placer web element the graph to be placed in
  */
-export function lastPrice(
+async function lastPrice(
   csvPath,
   createGraphSmall,
   placer,
@@ -37,7 +37,7 @@ export function lastPrice(
   });
 }
 
-export function createGraph(data, priceType, dealType, placer) {
+async function createGraph(data, priceType, dealType, placer) {
   let date = [];
   let price = [priceType];
 
@@ -87,9 +87,7 @@ export function createGraph(data, priceType, dealType, placer) {
   });
 }
 
-///
-
-export function createGraphSmall(data, placer, placerPerNight, filter) {
+async function createGraphSmall(data, placer, placerPerNight, filter) {
   let dealName = [];
   let dealPrice = ["Last Price"];
   const lastDate = data[data.length - 1][0];
@@ -167,4 +165,31 @@ export function createGraphSmall(data, placer, placerPerNight, filter) {
       position: "inset",
     },
   });
+}
+
+export function setGraphsPerStay(option, packageDetails, csvPath) {
+  const title = document.querySelector(`${option} .propertyName`);
+  title.innerHTML = packageDetails.name;
+  title.setAttribute("href", packageDetails.link);
+  const image = document.querySelector(`${option}  .image`);
+  image.setAttribute("src", packageDetails.imgSource);
+  const map = document.querySelector(`${option} .map`);
+  map.innerHTML = packageDetails.address;
+  map.setAttribute("href", packageDetails.addressMap);
+
+  parseData(
+    csvPath,
+    createGraph,
+    "Price for the stay",
+    packageDetails.name,
+    `${option} .chart`
+  );
+
+  lastPrice(
+    csvPath,
+    createGraphSmall,
+    `${option} .small-chart`,
+    `${option} .nightPrice`,
+    packageDetails.name
+  );
 }

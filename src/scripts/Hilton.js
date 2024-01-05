@@ -1,32 +1,5 @@
-import * as graph from "../graphBuilder1.js";
+import { setGraphsPerStay } from "../graphBuilder1.js";
 const csvPath = "../curent_prices/hilton-price.csv";
-
-async function setGraphsPerStay(option, packageDetails) {
-  const title = document.querySelector(`${option} .propertyName`);
-  title.innerHTML = packageDetails.name;
-  title.setAttribute("href", packageDetails.link);
-  const image = document.querySelector(`${option}  .image`);
-  image.setAttribute("src", packageDetails.imgSource);
-  const map = document.querySelector(`${option} .map`);
-  map.innerHTML = packageDetails.address;
-  map.setAttribute("href", packageDetails.addressMap);
-
-  graph.parseData(
-    csvPath,
-    graph.createGraph,
-    "Price for the stay",
-    packageDetails.name,
-    `${option} .chart`
-  );
-
-  graph.lastPrice(
-    csvPath,
-    graph.createGraphSmall,
-    `${option} .small-chart`,
-    `${option} .nightPrice`,
-    packageDetails.name
-  );
-}
 
 const package1 = {
   name: "ENCLAVE GARDEN VIEW - 2 QUEEN BEDS",
@@ -46,5 +19,5 @@ const package2 = {
   addressMap: "https://maps.app.goo.gl/7nVEaA5PpEH2TMJi9",
 };
 
-setGraphsPerStay(".option_1", package1);
-setGraphsPerStay(".option_2", package2);
+setGraphsPerStay(".option_1", package1, csvPath);
+setGraphsPerStay(".option_2", package2, csvPath);

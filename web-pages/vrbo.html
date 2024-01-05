@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>😺 VRBO price checker</title>
+    <link
+      rel="icon"
+      href="https://be.synxis.com/assets/chain/17001/hotel/35043/fileStorage/other/favicon.ico"
+    />
+    <link rel="shortcut icon" href="#" />
+
+    <!-- Load stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/c3.css" type="text/css" />
+
+    <!-- Load d3.js and c3.js, papaparse.js -->
+    <script src="../src/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../src/c3.min.js"></script>
+    <script src="../src/papaparse.min.js"></script>
+    <script type="module" src="../src/scripts/VRBO.js"></script>
+  </head>
+
+  <body>
+    <div id="pageHeader">
+      <div>
+        <h1 id="header">The price changes AirbNB Crested Butte</h1>
+      </div>
+      <div class="topnav">
+        <a href="../">Home</a>
+        <a href="hilton.html">Hilton</a>
+        <a href="index.html">SkiCb</a>
+        <a href="hampton.html">Hampton</a>
+        <a href="crestedButte.html">AirbNB</a>
+        <a class="active" href="vrbo.html">VRBO</a>
+      </div>
+    </div>
+    <br />
+    <div class="search-details"></div>
+
+    <div class="dataSet option_1">
+      <div class="flex relative container">
+        <div class="flex-1 overflow-hidden relative center">
+          <div class="flex relative">
+            <div class="flex-1 overflow-hidden relative">
+              <img class="image" alt="listing-42709896-hero-image" />
+            </div>
+            <div class="flex-1 overflow-hidden relative title">
+              <a class="propertyName"> </a>
+              <br /><br />
+              <a class="map"> </a>
+
+              <br />
+              <b><div class="nightPrice"></div></b>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1 overflow-hidden relative">
+          <div>
+            <div class="small-chart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <input id="collapsible1" class="toggle" type="checkbox" />
+        <label for="collapsible1" class="lbl-toggle">More Info</label>
+        <div class="collapsible-content">
+          <div class="chart"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dataSet option_2">
+      <div class="flex relative container">
+        <div class="flex-1 overflow-hidden relative center">
+          <div class="flex relative">
+            <div class="flex-1 overflow-hidden relative">
+              <img class="image" alt="listing-42709896-hero-image" />
+            </div>
+            <div class="flex-1 overflow-hidden relative title">
+              <a class="propertyName"> </a>
+              <br /><br />
+              <a class="map"> </a>
+
+              <br />
+              <b><div class="nightPrice"></div></b>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1 overflow-hidden relative">
+          <div>
+            <div class="small-chart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <input id="collapsible2" class="toggle" type="checkbox" />
+        <label for="collapsible2" class="lbl-toggle">More Info</label>
+        <div class="collapsible-content">
+          <div class="chart"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
