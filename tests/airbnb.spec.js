@@ -1,6 +1,6 @@
 const { test } = require("@playwright/test");
 import { Dates } from "../components/dates.js";
-import { Components } from "../components";
+import { Components } from "../components/index.js";
 import { publish } from "../src/publisher1.js";
 import { expect } from "@playwright/test";
 

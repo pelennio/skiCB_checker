@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test";
 import { Skibd } from "./skibd";
 import { Hilton } from "./hilton";
 import { Hampton } from "./hampton";
-import { CrestedButteAirbNB } from "./crestedButteAirbNB";
+import { CrestedButteAirbNB } from "./airbNB";
 import { VRBO } from "./vrbo";
 export class Components {
   public skibd: Skibd;
