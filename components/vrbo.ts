@@ -20,9 +20,6 @@ export class VRBO {
       .locator(".uitk-text")
       .nth(1);
   }
-  // get pricePerStay() {
-  //   return this.page.locator("._1qs94rc ._j1kt73");
-  // }
 
   get detailsButton() {
     return this.page.getByRole("button", { name: "Price details" });

@@ -17,19 +17,39 @@ const package1 = {
   name: "Comfortable Condo close to Slopes with a Hot Tub!",
   link: await getLink("53818517"),
   imgSource:
-    "https://a0.muscache.com/im/pictures/02bf1e62-3345-4b6d-9109-1e13c44f4b1e.jpg",
+    "https://images.trvl-media.com/lodging/54000000/53820000/53818600/53818517/143ea216.jpg?impolicy=resizecrop&rw=1200&ra=fit",
   address: "address to be checked",
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
 const package2 = {
-  name: "Ski in/out,50Ft from Lift,Sleeps 7.Luxury Remodel!",
-  link: await getLink("738343714490717816"),
+  name: "Easy Mountain - Mt Crested Butte",
+  link: await getLink("63108931"),
   imgSource:
-    "https://a0.muscache.com/im/pictures/miso/Hosting-738343714490717816/original/f6f21996-3b72-4fa1-9dcf-67a4aef99d65.jpeg?im_w=720",
-  address: "12 Snowmass Rd, Crested Butte, CO 81224",
-  addressMap: "https://maps.app.goo.gl/pCwnYjQRV9hZYGWV7",
+    "https://images.trvl-media.com/lodging/64000000/63110000/63109000/63108931/3bb9e95d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  address: "400 Gothic Rd, Crested Butte, CO 81225",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
+const package3 = {
+  name: "Hot Tub, Close Walk to the Slopes!",
+  link: await getLink("34142270"),
+  imgSource:
+    "https://images.trvl-media.com/lodging/35000000/34150000/34142300/34142270/86ce86d6.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  address: "400 Gothic Rd, Crested Butte, CO 81225",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
+const package4 = {
+  name: "LOCATION! Base Area Trails Right Outside your Door! GREAT RATES!",
+  link: await getLink("60368466"),
+  imgSource:
+    "https://images.trvl-media.com/lodging/61000000/60370000/60368500/60368466/c6bac70b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  address: "BASE AREA",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
 setGraphsPerStay(".option_1", package1, csvPath);
 setGraphsPerStay(".option_2", package2, csvPath);
+setGraphsPerStay(".option_3", package3, csvPath);
+setGraphsPerStay(".option_4", package4, csvPath);
