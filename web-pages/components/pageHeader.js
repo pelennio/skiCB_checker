@@ -10,24 +10,24 @@ class Header extends HTMLElement {
       lodge: "not-active",
     };
 
-    const location = window.location.pathname;
-    console.log("I'm on: ", window.location.pathname);
+    const location = window.location.pathname.split("/web-pages/")[1];
+    console.log("I'm on: ", location);
     let hotel = "";
 
     switch (location) {
-      case "/web-pages/airbnb.html":
+      case "airbnb.html":
         hotel = "AirbNB";
         elClass.airbnb = "active";
         break;
-      case "/web-pages/hilton.html":
+      case "hilton.html":
         hotel = "Hilton";
         elClass.hilton = "active";
         break;
-      case "/web-pages/vrbo.html":
+      case "vrbo.html":
         hotel = "VRBO";
         elClass.vrbo = "active";
         break;
-      case "/web-pages/index.html":
+      case "index.html":
         hotel = "Crested Butte - LODGE";
         elClass.lodge = "active";
         break;
