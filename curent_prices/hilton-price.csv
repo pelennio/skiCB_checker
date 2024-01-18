@@ -100,3 +100,4 @@ Date,DayOfWeek,Package,PricePerNight,Taxes&Fees,StayTotal,ChangeVector
 01-17-2024,Wednesday,Flexible Rate,$125,$37.54,$287.83,🟰
 01-18-2024,Thursday,ENCLAVE GARDEN VIEW - 2 QUEEN BEDS,$936,n/a,$6556,🟰
 01-18-2024,Thursday,Flexible Rate,$125,$37.54,$287.83,🟰
+01-18-2024,Thursday,Flexible Rate,$125,‌,‌,⬇︎ (NaN)
