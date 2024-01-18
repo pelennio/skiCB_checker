@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="../stylesheets/c3.css" type="text/css" />
 
     <!-- Load d3.js and c3.js, papaparse.js -->
+    <script
+      src="components/pageHeader.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="components/hotelOption.js"
+      type="text/javascript"
+      defer
+    ></script>
     <script src="../src/d3.v3.min.js" charset="utf-8"></script>
     <script src="../src/c3.min.js"></script>
     <script src="../src/papaparse.min.js"></script>
@@ -18,20 +28,13 @@
   </head>
 
   <body>
-    <div id="pageHeader">
-      <div>
-        <h1 id="header">The price changes from Crested Bute Lodge</h1>
-      </div>
-      <div class="topnav">
-        <a href="../">Home</a>
-        <a href="hilton.html">Hilton</a>
-        <a class="active" href="index.html">SkiCb</a>
-        <a href="hampton.html">Hampton</a>
-        <a href="airbnb.html">AirbNB</a>
-        <a href="vrbo.html">VRBO</a>
-      </div>
+    <header-component></header-component>
+
+    <div class="dataSet option_1">
+      <hotel-option></hotel-option>
     </div>
 
+    <h2>Old data from 2023</h2>
     <div class="dataSet">
       <div class="flex relative container">
         <div class="flex-1 overflow-hidden relative center">

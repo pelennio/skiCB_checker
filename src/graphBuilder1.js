@@ -27,12 +27,19 @@ async function lastPrice(
   createGraphSmall,
   placer,
   placerPerNight,
+  placerTotal,
   filter
 ) {
   Papa.parse(csvPath, {
     download: true,
     complete: function (results) {
-      createGraphSmall(results.data, placer, placerPerNight, filter);
+      createGraphSmall(
+        results.data,
+        placer,
+        placerPerNight,
+        placerTotal,
+        filter
+      );
     },
   });
 }
@@ -87,12 +94,19 @@ async function createGraph(data, priceType, dealType, placer) {
   });
 }
 
-async function createGraphSmall(data, placer, placerPerNight, filter) {
+async function createGraphSmall(
+  data,
+  placer,
+  placerPerNight,
+  placerTotal,
+  filter
+) {
   let dealName = [];
   let dealPrice = ["Last Price"];
   const lastDate = data[data.length - 1][0];
   console.log("Building graph for - lastDate: " + lastDate);
   let lastNightPrice;
+  let lastTotalPrice;
 
   for (var i = data.length - 1; i > 0; i--) {
     if (filter == undefined) {
@@ -102,6 +116,7 @@ async function createGraphSmall(data, placer, placerPerNight, filter) {
     } else {
       if (data[i][2] == filter) {
         lastNightPrice = data[i][3];
+        lastTotalPrice = data[i][5];
         break;
       }
     }
@@ -109,7 +124,10 @@ async function createGraphSmall(data, placer, placerPerNight, filter) {
 
   const details = `The last price for night: ${lastNightPrice} `;
   let placeholder = document.querySelector(`${placerPerNight}`);
+  const details1 = `The last total for the stay: ${lastTotalPrice} `;
+  let placeholder1 = document.querySelector(`${placerTotal}`);
   placeholder.innerHTML = details;
+  placeholder1.innerHTML = details1;
 
   for (var i = data.length - 1; i > 0; i--) {
     if (filter == undefined) {
@@ -167,7 +185,7 @@ async function createGraphSmall(data, placer, placerPerNight, filter) {
   });
 }
 
-export function setGraphsPerStay(option, packageDetails, csvPath) {
+export async function setGraphsPerStay(option, packageDetails, csvPath) {
   const title = document.querySelector(`${option} .propertyName`);
   title.innerHTML = packageDetails.name;
   title.setAttribute("href", packageDetails.link);
@@ -177,7 +195,7 @@ export function setGraphsPerStay(option, packageDetails, csvPath) {
   map.innerHTML = packageDetails.address;
   map.setAttribute("href", packageDetails.addressMap);
 
-  parseData(
+  await parseData(
     csvPath,
     createGraph,
     "Price for the stay",
@@ -185,11 +203,12 @@ export function setGraphsPerStay(option, packageDetails, csvPath) {
     `${option} .chart`
   );
 
-  lastPrice(
+  await lastPrice(
     csvPath,
     createGraphSmall,
     `${option} .small-chart`,
     `${option} .nightPrice`,
+    `${option} .totalPrice`,
     packageDetails.name
   );
 }

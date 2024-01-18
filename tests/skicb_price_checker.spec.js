@@ -2,13 +2,17 @@
 const { test } = require("@playwright/test");
 const moment = require("moment");
 import { Components } from "../components";
-import { publish } from "../src/publisher";
+import { publish as publish_old } from "../src/publisher";
+import { publish } from "../src/publisher1";
 // https://www.skicb.com/plan-your-trip/lift-access/passes.aspx
+// https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=12%2F19%2F2024&departuredate=12%2F26%2F2024&adultcount=3&childcount=1&childagearray=9
 
 test.describe("Price check: ", async () => {
   const checkInDate = "12/19/2024";
   const checkOutDate = "12/26/2024";
   const myDate = moment().format("MM-D-YYYY");
+  const csvPathOld = "curent_prices/skicb-price-old.csv";
+
   const csvPath = "curent_prices/skicb-price.csv";
 
   test.beforeEach(async ({ page }) => {
@@ -22,6 +26,7 @@ test.describe("Price check: ", async () => {
    */
   async function testPrice(option, { page }) {
     const component = new Components(page);
+
     await component.skibd.checkInDate.fill(checkInDate);
     await component.skibd.checkOutDate.click();
     await component.skibd.checkOutDate.fill(checkOutDate);
@@ -49,8 +54,8 @@ test.describe("Price check: ", async () => {
       const rewardsTotal = await component.skibd.priceWithRemovedComa(
         component.skibd.rewardsTotal
       );
-      publish(
-        csvPath,
+      publish_old(
+        csvPathOld,
         pricePromo,
         subtotal,
         taxesFees,
@@ -77,5 +82,36 @@ test.describe("Price check: ", async () => {
 
   test("3-st room option", async ({ page }) => {
     await testPrice(2, { page });
+  });
+
+  test("4-st room option", async ({ page }) => {
+    const component = new Components(page);
+    const option = "The Grand Lodge at Crested Butte - 2 King Emmons Studio ";
+    await page.goto(
+      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=12%2F19%2F2024&departuredate=12%2F26%2F2024&adultcount=3&childcount=1&childagearray=9"
+    );
+
+    await component.skibd.myRoom.click();
+
+    try {
+      const pricePromo = "The Grand Lodge Crested Butte Hotel and Suites";
+      const pricePerNight = await component.skibd.priceWithRemovedComa(
+        component.skibd.basicPerNight
+      );
+      const taxesFees = await component.skibd.priceWithRemovedComa(
+        component.skibd.taxesFees
+      );
+      const stayTotal = await component.skibd.priceWithRemovedComa(
+        component.skibd.rewardsTotal
+      );
+      publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+
+      await page.screenshot({
+        path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
+      });
+    } catch (error) {
+      console.log(`There is option to test out`);
+      test.skip();
+    }
   });
 });

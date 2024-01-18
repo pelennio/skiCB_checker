@@ -92,6 +92,19 @@ export class Skibd {
       .nth(num);
   }
 
+  get myRoom() {
+    return this.page
+      .locator("#c27_Product_Detail_2")
+      .getByRole("button", { name: "Add to Cart" });
+  }
+
+  get basicPerNight() {
+    return this.page
+      .locator("#c27_Product_Detail_2")
+      .locator(".lodging_details_unit_results__unit_price_nightly")
+      .nth(0);
+  }
+
   async priceWithRemovedComa(e: Locator) {
     return (await this.priceDetail(e)).replace(/,/g, "");
   }
