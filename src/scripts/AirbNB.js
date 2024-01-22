@@ -70,8 +70,8 @@ const package6 = {
 };
 
 const package7 = {
-  name: "Ski-In Ski-Out 2 bedroom Condo",
-  link: getLink("623251683275207962"),
+  name: "BR 2BA condo walking dist. to slopes w/ views!",
+  link: await getLink("623251683275207962"),
   imgSource:
     "https://a0.muscache.com/im/pictures/miso/Hosting-623251683275207962/original/f663bf1b-8bc5-4b30-a043-d7f8b4a009f9.jpeg?im_w=720",
   address: "400 Gothic Rd, Crested Butte, CO 81225",
@@ -80,7 +80,7 @@ const package7 = {
 
 const package8 = {
   name: "Ski In/Out at Base Area-Hot Tub, Walk to Lifts,Spa",
-  link: getLink("570325193548210419"),
+  link: await getLink("570325193548210419"),
   imgSource:
     "https://a0.muscache.com/im/pictures/miso/Hosting-570325193548210419/original/92ad8a20-ad0c-4769-b561-f8d24ed7b39a.jpeg?im_w=720",
   address: "not sure but close",
@@ -88,10 +88,18 @@ const package8 = {
 };
 const package9 = {
   name: "The First Chair Lair",
-  link: getLink("708259216851565596"),
+  link: await getLink("708259216851565596"),
   imgSource:
     "https://a0.muscache.com/im/pictures/122ef94a-712c-4562-8000-7145dc54faad.jpg?im_w=1200",
   address: "not too close",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+const package10 = {
+  name: "Newly Remodeled 1 Bedroom, At the Mt. CB Base Area, Great Afternoon Deck!",
+  link: await getLink("47799836"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-47799836/original/2559cf8b-fe1b-42f9-850c-0d7fa005c48f.jpeg?im_w=1200",
+  address: "Mt. CB Base Area",
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
@@ -104,3 +112,4 @@ setGraphsPerStay(".option_6", package6, csvPath);
 setGraphsPerStay(".option_7", package7, csvPath);
 setGraphsPerStay(".option_8", package8, csvPath);
 setGraphsPerStay(".option_9", package9, csvPath);
+setGraphsPerStay(".option_10", package10, csvPath);

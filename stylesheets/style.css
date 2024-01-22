@@ -126,3 +126,13 @@ input[type="checkbox"] {
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 350px;
 }
+
+.pageNumber {
+  color: #777;
+  font-size: small;
+
+  background-color: #fff;
+  margin-left: 0px;
+  float: left;
+  overflow: hidden;
+}

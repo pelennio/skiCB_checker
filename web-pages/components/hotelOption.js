@@ -38,13 +38,15 @@ class HotelOption extends HTMLElement {
         <div class="chart"></div>
       </div>
     </div>
-  
       `;
+    let myElem = document.getElementById(`collapsible+${option}`).parentNode;
+    console.log(myElem.className);
+    // console.log(myElem.parentNode.className);
   }
 }
 
 function getRandomInt() {
   return Math.floor(Math.random() * 1000);
 }
-//class="active"
+
 customElements.define("hotel-option", HotelOption);
