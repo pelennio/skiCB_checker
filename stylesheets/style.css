@@ -127,12 +127,11 @@ input[type="checkbox"] {
   max-height: 350px;
 }
 
-.pageNumber {
+.hotelCount {
   color: #777;
   font-size: small;
-
-  background-color: #fff;
-  margin-left: 0px;
+  margin-top: -2px;
+  margin-left: -10px;
   float: left;
   overflow: hidden;
 }
