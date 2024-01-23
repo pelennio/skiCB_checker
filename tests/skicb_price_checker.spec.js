@@ -4,12 +4,32 @@ const moment = require("moment");
 import { Components } from "../components";
 import { publish as publish_old } from "../src/publisher";
 import { publish } from "../src/publisher1";
+import { Dates } from "../components/dates.js";
 // https://www.skicb.com/plan-your-trip/lift-access/passes.aspx
 // https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=12%2F19%2F2024&departuredate=12%2F26%2F2024&adultcount=3&childcount=1&childagearray=9
 
 test.describe("Price check: ", async () => {
-  const checkInDate = "12/19/2024";
-  const checkOutDate = "12/26/2024";
+  const dates = new Dates();
+  const checkInDate = dates.checkInDate;
+  const checkOutDate = dates.checkOutDate;
+  let newCheckInDate =
+    checkInDate.slice(5, 7) +
+    "%2F" +
+    checkInDate.slice(8, 10) +
+    "%2F" +
+    checkInDate.slice(0, 4);
+
+  console.log("checkInDate: 12%2F19%2F2024", checkInDate, "--", newCheckInDate);
+  let newCheckOutDate =
+    checkOutDate.slice(5, 7) +
+    "%2F" +
+    checkOutDate.slice(8, 10) +
+    "%2F" +
+    checkOutDate.slice(0, 4);
+  console.log("checkOutDate: 12%2F26%2F2024", checkOutDate);
+
+  // const checkInDate = "12/19/2024";
+  // const checkOutDate = "12/26/2024";
   const myDate = moment().format("MM-D-YYYY");
   const csvPathOld = "curent_prices/skicb-price-old.csv";
 
@@ -88,7 +108,7 @@ test.describe("Price check: ", async () => {
     const component = new Components(page);
     const option = "The Grand Lodge at Crested Butte - 2 King Emmons Studio ";
     await page.goto(
-      "https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=12%2F19%2F2024&departuredate=12%2F26%2F2024&adultcount=3&childcount=1&childagearray=9"
+      `https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=${newCheckInDate}&departuredate=${newCheckOutDate}&adultcount=3&childcount=1&childagearray=9`
     );
 
     await component.skibd.myRoom.click();

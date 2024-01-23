@@ -14,6 +14,9 @@ export class VRBO {
       .locator('//*[@data-stid="content-hotel-title"]')
       .locator(".uitk-heading");
   }
+  get errorShown() {
+    return this.page.getByText("This property is not");
+  }
   get pricePerNight() {
     return this.page
       .locator('//*[@data-test-id="price-summary-message-line"]')

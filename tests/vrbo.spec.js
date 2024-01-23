@@ -33,8 +33,8 @@ test.describe("Price check: ", async () => {
       console.log("stayTotal: ", stayTotal);
       publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
     } catch (error) {
-      //to be redone with proper vrbo error
-      await expect(component.cbAirbNB.errorShown).toBeVisible();
+      await expect(component.vrbo.errorShown).toBeVisible();
+      // "This property is not available for check-in on this day"
       console.log("The price for this dates are not available");
     }
   }
@@ -69,5 +69,9 @@ test.describe("Price check: ", async () => {
 
   test("8-st room option", async ({ page }) => {
     await testPrice("71736392", { page });
+  });
+
+  test("9-st room option", async ({ page }) => {
+    await testPrice("84011550", { page });
   });
 });

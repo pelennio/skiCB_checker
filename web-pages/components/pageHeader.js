@@ -8,6 +8,7 @@ class Header extends HTMLElement {
       vrbo: "not-active",
       airbnb: "not-active",
       lodge: "not-active",
+      flights: "not-active",
     };
 
     const location = window.location.pathname.split("/web-pages/")[1];
@@ -31,6 +32,10 @@ class Header extends HTMLElement {
         hotel = "Crested Butte - LODGE";
         elClass.lodge = "active";
         break;
+      case "flights.html":
+        hotel = "FLIGHTS";
+        elClass.flights = "active";
+        break;
     }
 
     this.innerHTML = `
@@ -45,6 +50,7 @@ class Header extends HTMLElement {
       <a href="hampton.html">Hampton</a>
       <a class= ${elClass.airbnb} href="airbnb.html">AirbNB</a>
       <a class= ${elClass.vrbo} href="vrbo.html">VRBO</a>
+      <a class= ${elClass.flights} href="flights.html">Flights</a>
     </div>
   </div>
       `;

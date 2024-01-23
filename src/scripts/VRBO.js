@@ -5,8 +5,14 @@ const checkInDate = dates.checkInDate;
 const checkOutDate = dates.checkOutDate;
 const csvPath = "../curent_prices/vrbo.csv";
 const details = `The price for the stay from ${checkInDate} to ${checkOutDate}`;
-let placeholder = document.querySelector(".search-details");
+const placeholder = document.querySelector(".search-details");
 placeholder.innerHTML = details;
+
+const linkPlaceholder = document.querySelector(".web-site-search-link");
+const link = `https://www.vrbo.com/search?adults=2&amenities=&children=1_9%2C1_15&chkin=${checkInDate}&chkout=${checkOutDate}&d1=${checkInDate}&d2=${checkOutDate}&destination=Crested%20Butte%20Mountain%20Resort%2C%20Crested%20Butte%2C%20Colorado%2C%20United%20States%20of%20America&endDate=${checkOutDate}&latLong=38.896747587597645%2C-106.94335518507134&mapBounds=&privacyTrackingState=CAN_TRACK&pwaDialog=&regionId=6089703&searchId=f7496746-6723-4bb5-a265-aa64014e8a30&semdtl=&sort=RECOMMENDED&startDate=${checkInDate}`;
+linkPlaceholder.innerHTML = "New search on VRBO site";
+linkPlaceholder.setAttribute("href", link);
+
 // https://www.vrbo.com/search?adults=2&amenities=&children=1_9%2C1_15&chkin=2024-12-19&chkout=2024-12-26&d1=2024-12-19&d2=2024-12-26&destination=Crested%20Butte%20Mountain%20Resort%2C%20Crested%20Butte%2C%20Colorado%2C%20United%20States%20of%20America&endDate=2024-12-26&latLong=38.896747587597645%2C-106.94335518507134&mapBounds=&privacyTrackingState=CAN_TRACK&pwaDialog=&regionId=6089703&searchId=f7496746-6723-4bb5-a265-aa64014e8a30&semdtl=&sort=RECOMMENDED&startDate=2024-12-19
 async function getLink(propertyID) {
   let link = `https://www.vrbo.com/3686334ha?chkin=${checkInDate}&chkout=${checkOutDate}&adults=2&children=1_9%2C1_15&expediaPropertyId=${propertyID}`;
@@ -85,6 +91,15 @@ const package8 = {
   addressMap: "https://maps.app.goo.gl/BMUJm247DVocwqwE9",
 };
 
+const package9 = {
+  name: "Ski in/Ski Out, 50 Feet from Lift, Sleeps 7. New Luxury Remodel!!",
+  link: await getLink("84011550"),
+  imgSource:
+    "https://images.trvl-media.com/lodging/85000000/84020000/84011600/84011550/3fa74a79.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+  address: "Paradise Condos",
+  addressMap: "https://maps.app.goo.gl/BMUJm247DVocwqwE9",
+};
+
 setGraphsPerStay(".option_1", package1, csvPath);
 setGraphsPerStay(".option_2", package2, csvPath);
 setGraphsPerStay(".option_3", package3, csvPath);
@@ -93,3 +108,4 @@ setGraphsPerStay(".option_5", package5, csvPath);
 setGraphsPerStay(".option_6", package6, csvPath);
 setGraphsPerStay(".option_7", package7, csvPath);
 setGraphsPerStay(".option_8", package8, csvPath);
+setGraphsPerStay(".option_9", package9, csvPath);

@@ -81,6 +81,7 @@ h1 {
 .topnav a.active {
   background-color: #04aa6d;
   color: white;
+  font-weight: bold;
 }
 
 /************************For collapsing MORE INFO*/

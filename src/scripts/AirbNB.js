@@ -8,12 +8,18 @@ const csvPath = "../curent_prices/cbAirbNB.csv";
 const details = `The price for the stay from ${checkInDate} to ${checkOutDate}`;
 let placeholder = document.querySelector(".search-details");
 placeholder.innerHTML = details;
+
+const linkPlaceholder = document.querySelector(".web-site-search-link");
+const link = `https://www.airbnb.com/s/Mt-Crested-Butte--Colorado--USA/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=${checkInDate}&monthly_length=3&query=Mt%20Crested%20Butte%2C%20CO&place_id=ChIJ_ew67ZttQIcRghQKyP89KzY&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=${checkInDate}&checkout=${checkOutDate}&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&ne_lat=38.89856079607466&ne_lng=-106.96540563507915&sw_lat=38.89447370838086&sw_lng=-106.96752406649836&zoom=18.209586056623746&zoom_level=18.209586056623746&search_by_map=true`;
+linkPlaceholder.innerHTML = "New search on AitbNB site";
+linkPlaceholder.setAttribute("href", link);
+
 async function getLink(propertyID) {
   let link = `https://www.airbnb.com/rooms/${propertyID}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`;
   return link;
 }
-//for new tests
-//https://www.airbnb.com/s/Mt-Crested-Butte--Colorado--USA/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-02-01&monthly_length=3&query=Mt%20Crested%20Butte%2C%20CO&place_id=ChIJ_ew67ZttQIcRghQKyP89KzY&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=2024-12-19&checkout=2024-12-26&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&ne_lat=38.89856079607466&ne_lng=-106.96540563507915&sw_lat=38.89447370838086&sw_lng=-106.96752406649836&zoom=18.209586056623746&zoom_level=18.209586056623746&search_by_map=true
+
+`https://www.airbnb.com/s/Mt-Crested-Butte--Colorado--USA/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=${checkInDate}&monthly_length=3&query=Mt%20Crested%20Butte%2C%20CO&place_id=ChIJ_ew67ZttQIcRghQKyP89KzY&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=${checkInDate}&checkout=${checkOutDate}&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&ne_lat=38.89856079607466&ne_lng=-106.96540563507915&sw_lat=38.89447370838086&sw_lng=-106.96752406649836&zoom=18.209586056623746&zoom_level=18.209586056623746&search_by_map=true`;
 
 const package1 = {
   name: "The Woodcreek West Retreat - Fireplace, Hot Tub!",
