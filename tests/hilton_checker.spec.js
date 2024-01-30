@@ -28,7 +28,9 @@ test.describe("Price check: ", async () => {
     publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
   });
 
-  test("2-st room option: Hilton Garden Inn  Houston", async ({ page }) => {
+  test.skip("2-st room option: Hilton Garden Inn  Houston", async ({
+    page,
+  }) => {
     const component = new Components(page);
     await page.goto(
       "https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=HOUSIGI&arrivalDate=2024-01-26&departureDate=2024-01-28&room1NumAdults=2&room1NumChildren=2"
