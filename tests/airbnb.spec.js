@@ -71,4 +71,7 @@ test.describe("Price check: ", async () => {
   test("10-st room option", async ({ page }) => {
     await testPrice("47799836", { page });
   });
+  test("11-st room option", async ({ page }) => {
+    await testPrice("51168487", { page });
+  });
 });

@@ -109,6 +109,15 @@ const package10 = {
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
+const package11 = {
+  name: "Ski-In, Ski-Out Condo. Steps from the lift!",
+  link: await getLink("51168487"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51168487/original/6bbad3c9-ab9b-41eb-b363-55b8b255bc26.jpeg?im_w=1200",
+  address: "Mt. CB Base Area",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
 setGraphsPerStay(".option_1", package1, csvPath);
 setGraphsPerStay(".option_2", package2, csvPath);
 setGraphsPerStay(".option_3", package3, csvPath);
@@ -119,3 +128,4 @@ setGraphsPerStay(".option_7", package7, csvPath);
 setGraphsPerStay(".option_8", package8, csvPath);
 setGraphsPerStay(".option_9", package9, csvPath);
 setGraphsPerStay(".option_10", package10, csvPath);
+setGraphsPerStay(".option_11", package11, csvPath);
