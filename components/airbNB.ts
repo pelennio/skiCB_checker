@@ -27,6 +27,15 @@ export class CrestedButteAirbNB {
   get taxesTotal() {
     return this.page.getByTestId("price-item-TAXES");
   }
+  get taxesTotalCroatia() {
+    return this.page.getByTestId("price-item-AIRBNB_GUEST_FEE");
+  }
+  get translationModalClose() {
+    return this.page.getByTestId("modal-container").getByLabel("Close");
+  }
+  get cleaningFee() {
+    return this.page.getByTestId("price-item-CLEANING_FEE");
+  }
 
   get stayTotalPrice() {
     return this.page.getByTestId("price-item-total");

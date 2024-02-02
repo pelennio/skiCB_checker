@@ -55,7 +55,7 @@ export class Hilton {
   }
 
   priceDetail(element: Locator) {
-    return element.innerText();
+    return element.first().innerText();
   }
 
   async priceWithRemovedComa(e: Locator) {

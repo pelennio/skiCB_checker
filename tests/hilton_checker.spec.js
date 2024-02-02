@@ -16,8 +16,10 @@ test.describe("Price check: ", async () => {
       "https://be.synxis.com/?adult=3&arrive=2024-03-09&chain=17001&child=1&childages=8&config=PlayaWebsite&configcode=PlayaWebsite&currency=USD&depart=2024-03-16&dsclid=57964578136145920&hotel=5231&level=hotel&local=en-US&locale=en-US&rooms=1&theme=PlayaWebsite&themecode=PlayaWebsite&utm_medium=metasearch&utm_source=tripadvisor&utm_term=US"
     );
 
-    const pricePromo = await component.hilton.dealHeader.innerText();
-    const pricePerNight = await component.hilton.pricePerNight.innerText();
+    const pricePromo = await component.hilton.dealHeader.first().innerText();
+    const pricePerNight = await component.hilton.pricePerNight
+      .first()
+      .innerText();
     const stayTotal = (
       await component.hilton.priceWithRemovedComa(component.hilton.pricePerStay)
     )
