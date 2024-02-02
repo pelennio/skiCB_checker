@@ -205,3 +205,6 @@ Date,DayOfWeek,Package,PricePerNight,Taxes&Fees,StayTotal,ChangeVector
 02-2-2024,Friday,"Hot Tub, Close Walk to the Slopes!",$378,$445,$3707,🟰
 02-2-2024,Friday,LOCATION! Base Area Trails Right Outside your Door! GREAT RATES!,$404,$475,$3943,🟰
 02-2-2024,Friday,Cozy Crested Butte Condo 50 Yards from Ski Lift!,$699,$851,$6786,🟰
+02-2-2024,Friday,Comfortable Condo close to Slopes with a Hot Tub!,$444,$523,$4391,⬇︎ (-1)
+02-2-2024,Friday,LOCATION! Base Area Trails Right Outside your Door! GREAT RATES!,$404,$475,$3944,⬆︎ (1)
+02-2-2024,Friday,Cozy Crested Butte Condo 50 Yards from Ski Lift!,$699,$850,$6781,⬇︎ (-5)
