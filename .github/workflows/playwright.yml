@@ -14,6 +14,9 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Set current date as env variable
+        id: date
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -35,5 +38,5 @@ jobs:
           git config --global user.name "pelennio"
           git config --global user.email "pelennio@gmail.com"
           git status
-          git commit -am "New price results"
+          git commit -am "New price results $NOW"
           git push
