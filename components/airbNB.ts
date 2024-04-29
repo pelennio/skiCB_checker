@@ -6,7 +6,7 @@ export class CrestedButteAirbNB {
     this.page = page;
   }
   get errorShown() {
-    return this.page.getByText("Those dates are not available");
+    return this.page.locator("#bookItTripDetailsError");
   }
   get dealHeader() {
     return this.page

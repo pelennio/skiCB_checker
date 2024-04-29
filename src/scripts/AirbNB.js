@@ -118,6 +118,15 @@ const package11 = {
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
 
+const package12 = {
+  name: "Lovely 2 BR condo with amazing views",
+  link: await getLink("668014570938455905"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-668014570938455905/original/79b02862-163b-4fa7-8c60-f3fb01621388.jpeg?im_w=1200",
+  address: "400 Gothic Rd, Crested Butte, CO 81225",
+  addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
 setGraphsPerStay(".option_1", package1, csvPath);
 setGraphsPerStay(".option_2", package2, csvPath);
 setGraphsPerStay(".option_3", package3, csvPath);
@@ -129,3 +138,4 @@ setGraphsPerStay(".option_8", package8, csvPath);
 setGraphsPerStay(".option_9", package9, csvPath);
 setGraphsPerStay(".option_10", package10, csvPath);
 setGraphsPerStay(".option_11", package11, csvPath);
+setGraphsPerStay(".option_12", package12, csvPath);
