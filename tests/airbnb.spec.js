@@ -1,4 +1,5 @@
 const { test } = require("@playwright/test");
+import { error } from "console";
 import { Dates } from "../components/dates.js";
 import { DatesCroatia } from "../components/dates.js";
 import { Components } from "../components/index.js";
@@ -27,47 +28,56 @@ test.describe("Price check: ", async () => {
       checkInDate = checkInDateCroatia;
       checkOutDate = checkOutDateCroatia;
     }
-    await page.goto(
-      `https://www.airbnb.com/rooms/${option}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`
-    );
     try {
-      await component.cbAirbNB.translationModalClose.click({ timeout: 3000 });
-      console.log("Hello");
-    } catch (error) {
-      console.log("There is no translation prompt");
-    }
-
-    try {
-      const pricePromo = await component.cbAirbNB.dealHeader.innerText();
-      const pricePerNight = await component.cbAirbNB.pricePerNight
-        .first()
-        .innerText({ timeout: 3000 });
-      await component.cbAirbNB.reserveButton.click();
-      let taxesFees;
-      try {
-        if (place == 1) {
-          taxesFees = await component.cbAirbNB.taxesTotal.innerText();
-        } else if (place == 2) {
-          taxesFees = await component.cbAirbNB.taxesTotalCroatia.innerText({
-            timeout: 3000,
-          });
-        }
-        // taxesFees = await component.cbAirbNB.cleaningFee.innerText();
-      } catch (error) {
-        console.log("I cannot find taxes");
+      const propertyUrl = `https://www.airbnb.com/rooms/${option}?adults=2&children=2&check_in=${checkInDate}&check_out=${checkOutDate}`;
+      const myLink = await page.goto(propertyUrl);
+      let res1 = (await myLink.request().response()).status();
+      console.log("The status>> ", res1);
+      if (res1 == 410) {
+        throw new Error("The initial page cannot be loaded");
       }
 
-      const stayTotal = (
-        await component.cbAirbNB.priceWithRemovedComa(
-          component.cbAirbNB.stayTotalPrice
+      try {
+        await component.cbAirbNB.translationModalClose.click({ timeout: 3000 });
+        console.log("Hello");
+      } catch (error) {
+        console.log("There is no translation prompt");
+      }
+
+      try {
+        const pricePromo = await component.cbAirbNB.dealHeader.innerText();
+        const pricePerNight = await component.cbAirbNB.pricePerNight
+          .first()
+          .innerText({ timeout: 3000 });
+        await component.cbAirbNB.reserveButton.click();
+        let taxesFees;
+        try {
+          if (place == 1) {
+            taxesFees = await component.cbAirbNB.taxesTotal.innerText();
+          } else if (place == 2) {
+            taxesFees = await component.cbAirbNB.taxesTotalCroatia.innerText({
+              timeout: 3000,
+            });
+          }
+          // taxesFees = await component.cbAirbNB.cleaningFee.innerText();
+        } catch (error) {
+          console.log("I cannot find taxes");
+        }
+
+        const stayTotal = (
+          await component.cbAirbNB.priceWithRemovedComa(
+            component.cbAirbNB.stayTotalPrice
+          )
         )
-      )
-        .split(" ", 1)
-        .toString();
-      publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+          .split(" ", 1)
+          .toString();
+        publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+      } catch (error) {
+        propertyUrl = await expect(component.cbAirbNB.errorShown).toBeVisible();
+        console.log("The price for this dates are not available");
+      }
     } catch (error) {
-      await expect(component.cbAirbNB.errorShown).toBeVisible();
-      console.log("The price for this dates are not available");
+      console.log("Catched error ", error.message);
     }
   }
 
