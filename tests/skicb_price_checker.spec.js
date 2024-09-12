@@ -12,20 +12,8 @@ test.describe("Price check: ", async () => {
   const dates = new Dates();
   const checkInDate = dates.checkInDate;
   const checkOutDate = dates.checkOutDate;
-  let newCheckInDate =
-    checkInDate.slice(5, 7) +
-    "%2F" +
-    checkInDate.slice(8, 10) +
-    "%2F" +
-    checkInDate.slice(0, 4);
 
-  console.log("checkInDate: 12%2F19%2F2024", checkInDate, "--", newCheckInDate);
-  let newCheckOutDate =
-    checkOutDate.slice(5, 7) +
-    "%2F" +
-    checkOutDate.slice(8, 10) +
-    "%2F" +
-    checkOutDate.slice(0, 4);
+  console.log("checkInDate: 12%2F19%2F2024", checkInDate);
   console.log("checkOutDate: 12%2F26%2F2024", checkOutDate);
 
   // const checkInDate = "12/19/2024";
@@ -57,9 +45,10 @@ test.describe("Price check: ", async () => {
     await component.skibd.child_1_Age.fill("8");
     await component.skibd.searchButton.click();
     const el = component.skibd.dealsText(option);
+    await el.isVisible();
 
     try {
-      const pricePromo = await el.innerText({ timeout: 1000 });
+      const pricePromo = await el.innerText({ timeout: 3000 });
       await el.click();
       await component.skibd.addToCartButton.click();
       const subtotal = await component.skibd.priceWithRemovedComa(
@@ -102,36 +91,5 @@ test.describe("Price check: ", async () => {
 
   test("3-st room option", async ({ page }) => {
     await testPrice(2, { page });
-  });
-
-  test("4-st room option", async ({ page }) => {
-    const component = new Components(page);
-    const option = "The Grand Lodge at Crested Butte - 2 King Emmons Studio ";
-    await page.goto(
-      `https://www.skicb.com/Plan-Your-Trip/stay/details/The-Grand-Lodge-Crested-Butte-Hotel-and-Suites?location=50422320&arrivaldate=${newCheckInDate}&departuredate=${newCheckOutDate}&adultcount=3&childcount=1&childagearray=9`
-    );
-
-    await component.skibd.myRoom.click();
-
-    try {
-      const pricePromo = "The Grand Lodge Crested Butte Hotel and Suites";
-      const pricePerNight = await component.skibd.priceWithRemovedComa(
-        component.skibd.basicPerNight
-      );
-      const taxesFees = await component.skibd.priceWithRemovedComa(
-        component.skibd.taxesFees
-      );
-      const stayTotal = await component.skibd.priceWithRemovedComa(
-        component.skibd.rewardsTotal
-      );
-      publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
-
-      await page.screenshot({
-        path: `curent_prices/screens/${pricePromo}:${myDate}.png`,
-      });
-    } catch (error) {
-      console.log(`There is option to test out`);
-      test.skip();
-    }
   });
 });

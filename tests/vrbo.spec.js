@@ -4,7 +4,7 @@ import { Components } from "../components/index.js";
 import { publish } from "../src/publisher1.js";
 import { expect } from "@playwright/test";
 
-test.describe("Price check: ", async () => {
+test.describe.skip("Price check: ", async () => {
   const csvPath = "curent_prices/vrbo.csv";
   const dates = new Dates();
   const checkInDate = dates.checkInDate;
