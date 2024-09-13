@@ -1,13 +1,13 @@
 const { test } = require("@playwright/test");
 import { error } from "console";
-import { Dates } from "../components/dates.js";
+import { AirbNBDates } from "../components/dates.js";
 import { DatesCroatia } from "../components/dates.js";
 import { Components } from "../components/index.js";
 import { publish } from "../src/publisher1.js";
 
 test.describe("Price check: ", async () => {
   const csvPath = "curent_prices/cbAirbNB.csv";
-  const dates = new Dates();
+  const dates = new AirbNBDates();
   const checkInDateCB = dates.checkInDate;
   const checkOutDateCB = dates.checkOutDate;
 
