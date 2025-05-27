@@ -14,7 +14,7 @@ export class CrestedButteAirbNB {
       .getByRole("heading");
   }
   get pricePerNight() {
-    return this.page.locator("._1jo4hgw");
+    return this.page.getByTestId("pd-title-ACCOMMODATION");
   }
   get pricePerStay() {
     return this.page.locator("._1qs94rc ._j1kt73");

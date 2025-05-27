@@ -32,23 +32,37 @@ test.describe("Price check: ", async () => {
       const myLink = await page.goto(propertyUrl);
       let res1 = (await myLink.request().response()).status();
       console.log("The status>> ", res1);
+      await page.waitForTimeout(3000);
+      if (page.url() === "https://www.airbnb.com/") {
+        test.skip("Test skipped because it landed on the Airbnb homepage");
+        return;
+      }
       if (res1 == 410) {
         throw new Error("The initial page cannot be loaded");
       }
 
       try {
         await component.cbAirbNB.translationModalClose.click({ timeout: 3000 });
-        console.log("Hello");
+        console.log("Translation modal was closed");
       } catch (error) {
         console.log("There is no translation prompt");
       }
 
       try {
         const pricePromo = await component.cbAirbNB.dealHeader.innerText();
-        const pricePerNight = await component.cbAirbNB.pricePerNight
-          .first()
-          .innerText({ timeout: 3000 });
-        await component.cbAirbNB.reserveButton.click();
+        // ,,,,
+        //   .first()
+        //   .innerText({ timeout: 3000 });
+        if (await component.cbAirbNB.errorShown.isVisible()) {
+          console.log("🧭 The price for this dates is not available");
+          test.skip("Test skipped because it landed on the Airbnb homepage");
+          return;
+        }
+        await component.cbAirbNB.reserveButton.click(); // click on reserve button to get price details
+        const pricePerNightText =
+          await component.cbAirbNB.pricePerNight.innerText();
+        const pricePerNight = pricePerNightText.split(" ")[0];
+        console.log(pricePerNight);
         let taxesFees;
         try {
           if (place == 1) {
@@ -71,10 +85,14 @@ test.describe("Price check: ", async () => {
           .split(" ", 1)
           .toString();
         publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
+        console.log(
+          "Test details",
+          pricePromo,
+          pricePerNight,
+          taxesFees,
+          stayTotal
+        );
       } catch (error) {
-        if (await component.cbAirbNB.errorShown.isVisible()) {
-          console.log("🧭 The price for this dates is not available");
-        }
         console.log("🛠️ ", error.message);
       }
     } catch (error) {

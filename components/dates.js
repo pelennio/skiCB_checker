@@ -3,8 +3,8 @@ export class Dates {
   checkOutDate;
 
   constructor() {
-    this.checkInDate = "12/19/2024";
-    this.checkOutDate = "12/26/2024";
+    this.checkInDate = "12/19/2025";
+    this.checkOutDate = "12/26/2025";
   }
 }
 
@@ -13,8 +13,8 @@ export class AirbNBDates {
   checkOutDate;
 
   constructor() {
-    this.checkInDate = "2024-12-19";
-    this.checkOutDate = "2024-12-26";
+    this.checkInDate = "2025-12-19";
+    this.checkOutDate = "2025-12-26";
   }
 }
 
