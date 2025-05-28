@@ -9,8 +9,23 @@ const details = `The price for the stay from ${checkInDate} to ${checkOutDate}`;
 let placeholder = document.querySelector(".search-details");
 placeholder.innerHTML = details;
 
+//reformat date to use in search link
+async function formatDate(date) {
+  const [month, day, year] = date.split("/");
+  const formattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(
+    2,
+    "0"
+  )}`;
+  return formattedDate;
+}
+console.log(await formatDate(checkInDate));
+
 const linkPlaceholder = document.querySelector(".web-site-search-link");
-const link = `https://www.airbnb.com/s/Mt-Crested-Butte--Colorado--USA/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=${checkInDate}&monthly_length=3&query=Mt%20Crested%20Butte%2C%20CO&place_id=ChIJ_ew67ZttQIcRghQKyP89KzY&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=${checkInDate}&checkout=${checkOutDate}&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&ne_lat=38.89856079607466&ne_lng=-106.96540563507915&sw_lat=38.89447370838086&sw_lng=-106.96752406649836&zoom=18.209586056623746&zoom_level=18.209586056623746&search_by_map=true`;
+const link = `https://www.airbnb.com/s/Crested-Butte-Mountain-Resort--Mount-Crested-Butte--CO/homes?place_id=ChIJO4oGmYZtQIcR-qDfkW5kg6Y&refinement_paths%5B%5D=%2Fhomes&checkin=${await formatDate(
+  checkInDate
+)}&checkout=${await formatDate(
+  checkOutDate
+)}&date_picker_type=calendar&adults=2&children=2&guests=4&search_type=AUTOSUGGEST`;
 linkPlaceholder.innerHTML = "New search on AitbNB site";
 linkPlaceholder.setAttribute("href", link);
 
@@ -128,12 +143,21 @@ const package12 = {
 };
 
 const package13 = {
-  name: "Entire condo in Mount Crested Butte",
+  name: "The East River Rendezvous; Hot Tub, Walk to Lifts",
   link: await getLink("570817594388233012"),
   imgSource:
     "https://a0.muscache.com/im/pictures/miso/Hosting-570817594388233012/original/ab784ac8-e6ef-4943-bcbc-0f65acf4799b.jpeg?im_w=960",
   address: "400 Gothic Rd, Crested Butte, CO 81225",
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+};
+
+const package14 = {
+  name: "Refreshing 1 bedroom @ the Base of the Resort!",
+  link: await getLink("50895934"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTA4OTU5MzQ%3D/original/493f76b0-18ce-49c7-81ee-1ff1691129eb.jpeg?im_w=960",
+  address: "14 Snowmass Rd, Crested Butte, CO 81225",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
 };
 
 setGraphsPerStay(".option_1", package1, csvPath);
@@ -149,3 +173,4 @@ setGraphsPerStay(".option_10", package10, csvPath);
 setGraphsPerStay(".option_11", package11, csvPath);
 setGraphsPerStay(".option_12", package12, csvPath);
 setGraphsPerStay(".option_13", package13, csvPath);
+setGraphsPerStay(".option_14", package14, csvPath);
