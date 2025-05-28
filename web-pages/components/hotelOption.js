@@ -20,6 +20,7 @@ class HotelOption extends HTMLElement {
             <hr />
             <b><div class="nightPrice"></div></b>
             <b><div class="totalPrice"></div></b>
+            <b><a class="note"></a></b>
           </div>
         </div>
       </div>

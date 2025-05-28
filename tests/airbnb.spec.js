@@ -151,4 +151,15 @@ test.describe("@airbnb", "Price check: ", async () => {
   test("14-st room option", async ({ page }) => {
     await testPrice("50895934", 1, { page });
   });
+
+  test("15-st room option", async ({ page }) => {
+    await testPrice("41884759", 1, { page });
+  });
+  test("16-st room option", async ({ page }) => {
+    await testPrice("31807082", 1, { page });
+  });
+
+  test("17-st room option", async ({ page }) => {
+    await testPrice("31807082", 1, { page });
+  });
 });

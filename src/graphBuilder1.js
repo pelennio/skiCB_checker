@@ -194,6 +194,11 @@ export async function setGraphsPerStay(option, packageDetails, csvPath) {
   const map = document.querySelector(`${option} .map`);
   map.innerHTML = packageDetails.address;
   map.setAttribute("href", packageDetails.addressMap);
+  const note = document.querySelector(`${option} .note`);
+  if (packageDetails.note) {
+    note.innerHTML = "note";
+    note.setAttribute("href", packageDetails.note);
+  }
 
   await parseData(
     csvPath,

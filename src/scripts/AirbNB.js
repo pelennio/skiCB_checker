@@ -120,8 +120,9 @@ const package10 = {
   link: await getLink("47799836"),
   imgSource:
     "https://a0.muscache.com/im/pictures/miso/Hosting-47799836/original/2559cf8b-fe1b-42f9-850c-0d7fa005c48f.jpeg?im_w=1200",
-  address: "Mt. CB Base Area",
+  address: "Axtell",
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
+  note: "https://crestedbuttelodging.com/vacation-rentals/m/properties/axtel-319?checkin=2025-12-19&checkout=2025-12-26",
 };
 
 const package11 = {
@@ -156,8 +157,38 @@ const package14 = {
   link: await getLink("50895934"),
   imgSource:
     "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTA4OTU5MzQ%3D/original/493f76b0-18ce-49c7-81ee-1ff1691129eb.jpeg?im_w=960",
-  address: "14 Snowmass Rd, Crested Butte, CO 81225",
+  address: "Axtell",
   addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  note: "https://crestedbuttelodging.com/vacation-rentals/m/properties/axtel-319?checkin=2025-12-19&checkout=2025-12-26",
+};
+
+const package15 = {
+  name: "See the lifts at this 1 bedroom @ the base!",
+  link: await getLink("41884759"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-41884759/original/659026e0-ab04-4bc2-8464-d06cd40f6403.jpeg?im_w=960",
+  address: "Axtell",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  note: "https://crestedbuttelodging.com/vacation-rentals/m/properties/axtell-314?checkin=2025-12-19&checkout=2025-12-26",
+};
+const package16 = {
+  name: "1 Br Loft W/ Deck - Sleeps 5",
+  link: await getLink("31807082"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/18cabc4e-1aca-427f-aecf-7415291997d3.jpg?im_w=960",
+  address: "Axtell",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  note: "https://www.redawning.com/rental-property/1-br-loft-deck-sleeps-5-people-crested-butte",
+};
+
+const package17 = {
+  name: "SkiTopia- A Mountain Lovers Paradise!",
+  link: await getLink("30464623"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/bbd7856d-b97f-4d36-92f7-01826affc908.jpg?im_w=960",
+  address: "Axtell",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  // note: "https://www.redawning.com/rental-property/1-br-loft-deck-sleeps-5-people-crested-butte",
 };
 
 setGraphsPerStay(".option_1", package1, csvPath);
@@ -174,3 +205,4 @@ setGraphsPerStay(".option_11", package11, csvPath);
 setGraphsPerStay(".option_12", package12, csvPath);
 setGraphsPerStay(".option_13", package13, csvPath);
 setGraphsPerStay(".option_14", package14, csvPath);
+setGraphsPerStay(".option_15", package15, csvPath);
