@@ -144,6 +144,10 @@ test.describe("Price check: ", async () => {
   test("12-st room option", async ({ page }) => {
     await testPrice("668014570938455905", 1, { page });
   });
+
+  test("13-st room option", async ({ page }) => {
+    await testPrice("570817594388233012", 1, { page });
+  });
   //https://www.airbnb.com/s/Zagreb--Croatia/homes?flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2024-12-21&monthly_length=3&query=Zagreb%2C%20Croatia&refinement_paths%5B%5D=%2Fhomes&tab_id=home_tab&date_picker_type=calendar&checkin=2024-07-20&checkout=2024-07-27&adults=2&children=2&source=structured_search_input_header&search_type=user_map_move&price_filter_input_type=0&price_filter_num_nights=7&channel=EXPLORE&zoom_level=10.061783123394292&place_id=ChIJOcwCyZLWZUcRisL7KJYkRTo&ne_lat=44.50738461996349&ne_lng=15.815044206737838&sw_lat=43.778501284199436&sw_lng=15.253867019766346&zoom=10.061783123394292&search_by_map=true&min_bedrooms=3&l2_property_type_ids%5B%5D=1&amenities%5B%5D=7&price_max=300&monthly_end_date=2024-05-01
   // test("12-st room option - Croatia", async ({ page }) => {
   //   await testPrice("11511490", 2, { page });
