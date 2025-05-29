@@ -103,7 +103,7 @@ const package8 = {
   name: "Ski In/Out at Base Area-Hot Tub, Walk to Lifts,Spa",
   link: await getLink("570325193548210419"),
   imgSource:
-    "https://a0.muscache.com/im/pictures/miso/Hosting-570325193548210419/original/92ad8a20-ad0c-4769-b561-f8d24ed7b39a.jpeg?im_w=720",
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTcwMzI1MTkzNTQ4MjEwNDE5/original/5bb6ce77-a749-4a0c-990c-e2a4dbb09b30.jpeg?im_w=960",
   address: "not sure but close",
   addressMap: "https://maps.app.goo.gl/CdS5hjMfCL4dPPSB9",
 };
@@ -206,3 +206,5 @@ setGraphsPerStay(".option_12", package12, csvPath);
 setGraphsPerStay(".option_13", package13, csvPath);
 setGraphsPerStay(".option_14", package14, csvPath);
 setGraphsPerStay(".option_15", package15, csvPath);
+setGraphsPerStay(".option_16", package16, csvPath);
+setGraphsPerStay(".option_17", package17, csvPath);

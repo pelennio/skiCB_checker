@@ -55,6 +55,15 @@ export async function publish(
       StayTotal: `${stayTotal}`,
       ChangeVector: changeVector,
     });
+    // console.log({
+    //   Date: `${myDate}`,
+    //   DayOfWeek: `${day}`,
+    //   Package: `${promo}`,
+    //   PricePerNight: `${pricePerNight}`,
+    //   "Taxes&Fees": `${taxesFees}`,
+    //   StayTotal: `${stayTotal}`,
+    //   ChangeVector: changeVector,
+    // });
 
     const lastPriceData =
       output[Object.keys(output)[Object.keys(output).length - 1]];

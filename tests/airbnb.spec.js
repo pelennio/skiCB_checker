@@ -86,7 +86,7 @@ test.describe("@airbnb", "Price check: ", async () => {
           .toString();
         publish(csvPath, pricePromo, pricePerNight, taxesFees, stayTotal);
         console.log(
-          "Test details",
+          "Test details: ",
           pricePromo,
           pricePerNight,
           taxesFees,
@@ -155,11 +155,12 @@ test.describe("@airbnb", "Price check: ", async () => {
   test("15-st room option", async ({ page }) => {
     await testPrice("41884759", 1, { page });
   });
+
   test("16-st room option", async ({ page }) => {
     await testPrice("31807082", 1, { page });
   });
 
   test("17-st room option", async ({ page }) => {
-    await testPrice("31807082", 1, { page });
+    await testPrice("30464623", 1, { page });
   });
 });
