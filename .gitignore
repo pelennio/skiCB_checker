@@ -1,5 +1,5 @@
 node_modules/
+.curent_prices/
 /playwright-report/
 /playwright/.cache/
-/curent_prices/
 package-lock.json

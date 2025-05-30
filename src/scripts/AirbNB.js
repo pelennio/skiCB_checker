@@ -190,6 +190,33 @@ const package17 = {
   addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
   // note: "https://www.redawning.com/rental-property/1-br-loft-deck-sleeps-5-people-crested-butte",
 };
+const package18 = {
+  name: "Crested Mountain Condo: Ski-in/Ski-out, Hot Tub!",
+  link: await getLink("756588966755554194"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-756588966755554194/original/a164764b-2e9e-47d7-8d63-f399f28942d4.jpeg?im_w=1200",
+  address: "on the Slopp!!!",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  // note: "https://www.redawning.com/rental-property/1-br-loft-deck-sleeps-5-people-crested-butte",
+};
+const package19 = {
+  name: "Crested Mountain Condo: Ski-in/Ski-out, Hot Tub!",
+  link: await getLink("792113849413641112"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/prohost-api/Hosting-792113849413641112/original/a9f76e7f-302f-449f-b986-c2c5b00f0fb4.jpeg?im_w=1200",
+  address: "near, on the Slopp!!!, 3045",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  note: "https://www.bhhstodayvr.com/property/516-buttes?PageDataID=185304&AD=12/19/2025&DD=12/26/2025",
+};
+const package20 = {
+  name: "Crested Mountain Condo: Ski-in/Ski-out, Hot Tub!",
+  link: await getLink("1308796741953473867"),
+  imgSource:
+    "https://a0.muscache.com/im/pictures/miso/Hosting-1308796741953473867/original/abc3d3fa-e70d-4b22-b7ec-09a583884e45.jpeg?im_w=960",
+  address: "near, on the Slopp!!!, 3045",
+  addressMap: "https://maps.app.goo.gl/4nP88CMCNanBXpwTA",
+  // note: "https://www.bhhstodayvr.com/property/516-buttes?PageDataID=185304&AD=12/19/2025&DD=12/26/2025",
+};
 
 setGraphsPerStay(".option_1", package1, csvPath);
 setGraphsPerStay(".option_2", package2, csvPath);
@@ -208,3 +235,6 @@ setGraphsPerStay(".option_14", package14, csvPath);
 setGraphsPerStay(".option_15", package15, csvPath);
 setGraphsPerStay(".option_16", package16, csvPath);
 setGraphsPerStay(".option_17", package17, csvPath);
+setGraphsPerStay(".option_18", package18, csvPath);
+setGraphsPerStay(".option_19", package19, csvPath);
+setGraphsPerStay(".option_20", package20, csvPath);

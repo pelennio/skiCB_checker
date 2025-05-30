@@ -33,8 +33,9 @@ test.describe("@airbnb", "Price check: ", async () => {
       let res1 = (await myLink.request().response()).status();
       console.log("The status>> ", res1);
       await page.waitForTimeout(3000);
+      // if listing is not available anymore -> skip the test
       if (page.url() === "https://www.airbnb.com/") {
-        test.skip("Test skipped because it landed on the Airbnb homepage");
+        console.log("The property listing is not available");
         return;
       }
       if (res1 == 410) {
@@ -50,12 +51,9 @@ test.describe("@airbnb", "Price check: ", async () => {
 
       try {
         const pricePromo = await component.cbAirbNB.dealHeader.innerText();
-        // ,,,,
-        //   .first()
-        //   .innerText({ timeout: 3000 });
+
         if (await component.cbAirbNB.errorShown.isVisible()) {
           console.log("🧭 The price for this dates is not available");
-          test.skip("Test skipped because it landed on the Airbnb homepage");
           return;
         }
         await component.cbAirbNB.reserveButton.click(); // click on reserve button to get price details
@@ -162,5 +160,14 @@ test.describe("@airbnb", "Price check: ", async () => {
 
   test("17-st room option", async ({ page }) => {
     await testPrice("30464623", 1, { page });
+  });
+  test("18-st room option", async ({ page }) => {
+    await testPrice("756588966755554194", 1, { page });
+  });
+  test("19-st room option", async ({ page }) => {
+    await testPrice("792113849413641112", 1, { page });
+  });
+  test("20-st room option", async ({ page }) => {
+    await testPrice("1308796741953473867", 1, { page });
   });
 });
