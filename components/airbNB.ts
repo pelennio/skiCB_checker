@@ -38,7 +38,7 @@ export class CrestedButteAirbNB {
   }
 
   get stayTotalPrice() {
-    return this.page.getByTestId("price-item-total");
+    return this.page.getByTestId("pd-value-TOTAL");
   }
 
   priceDetail(element: Locator) {
